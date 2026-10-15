@@ -188,7 +188,7 @@ export default function App() {
             <img src={logoImg} alt="MKB Ventures Global LLC Logo" className="brand-logo-img" />
             <div>
               <div className="brand-title">MKB Ventures Global LLC</div>
-              <div className="brand-subtitle">Automotive, Baby Care, Beauty, Gourmet & Home Essentials</div>
+              <div className="brand-subtitle">Home & Kitchen, Beauty Care & Pet Supplies</div>
             </div>
           </div>
 
@@ -201,6 +201,14 @@ export default function App() {
                   onClick={() => navigateTo('home')}
                 >
                   Home
+                </button>
+              </li>
+              <li>
+                <button 
+                  className={`nav-link ${activeTab === 'shop' ? 'active' : ''}`}
+                  onClick={() => { setSelectedCategory('all'); navigateTo('shop'); }}
+                >
+                  Shop All
                 </button>
               </li>
               <li>
@@ -284,8 +292,11 @@ export default function App() {
             {/* All Products master pill */}
             <div className="blue-bar-categories">
               <button 
-                className={`blue-cat-btn all-cat-btn ${selectedCategory === 'all' && activeTab === 'home' ? 'active' : ''}`}
-                onClick={() => handleCategoryClick('all')}
+                className={`blue-cat-btn all-cat-btn ${(activeTab === 'shop' || activeTab === 'home') && selectedCategory === 'all' ? 'active' : ''}`}
+                onClick={() => {
+                  setSelectedCategory('all');
+                  navigateTo('shop');
+                }}
               >
                 <LayoutGrid size={15} />
                 <span>All Products</span>
@@ -447,7 +458,13 @@ export default function App() {
                 <div 
                   key={cat.id} 
                   className="category-card-clean"
-                  onClick={() => handleCategoryClick(cat.id)}
+                  onClick={() => {
+                    if (cat.link) {
+                      window.open(cat.link, '_blank', 'noopener,noreferrer');
+                    } else {
+                      handleCategoryClick(cat.id);
+                    }
+                  }}
                 >
                   <div className="category-img-container">
                     <img 
@@ -459,15 +476,23 @@ export default function App() {
                   </div>
                   <div className="category-meta-clean">
                     <h3 className="category-name-clean">{cat.name}</h3>
-                    <button 
+                    <a 
+                      href={cat.link || '#'}
+                      target={cat.link ? '_blank' : undefined}
+                      rel={cat.link ? 'noopener noreferrer' : undefined}
                       className="category-link-clean"
                       onClick={(e) => {
-                        e.stopPropagation();
-                        handleCategoryClick(cat.id);
+                        if (!cat.link) {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleCategoryClick(cat.id);
+                        } else {
+                          e.stopPropagation();
+                        }
                       }}
                     >
                       {cat.buttonText}
-                    </button>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -1920,11 +1945,9 @@ export default function App() {
                     <label className="form-label">Categories of Interest</label>
                     <select className="form-select">
                       <option>All Product Categories</option>
-                      <option>Automotive Essentials</option>
-                      <option>Baby Care Favorites</option>
-                      <option>Beauty and Personal Care</option>
-                      <option>Grocery and Gourmet</option>
-                      <option>Home and Everyday Finds</option>
+                      {categories.map((c) => (
+                        <option key={c.id}>{c.name}</option>
+                      ))}
                     </select>
                   </div>
                   <div className="form-group">

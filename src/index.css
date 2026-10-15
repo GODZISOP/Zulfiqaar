@@ -64,7 +64,7 @@ body {
   height: 50px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
 }
 
 .footer-logo-img {
@@ -377,8 +377,15 @@ body {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-drawer-section {
@@ -412,7 +419,8 @@ body {
   transition: all 0.15s ease;
 }
 
-.mobile-nav-link:hover, .mobile-nav-link.active {
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
   background: #e6f4f8;
   color: #1e7087;
 }
@@ -441,17 +449,21 @@ body {
   .desktop-nav {
     display: none;
   }
+
   .mobile-toggle-btn {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .blue-bar-perks {
     display: none;
   }
+
   .main-nav {
     padding: 12px 20px;
   }
+
   .products-blue-bar {
     padding: 6px 16px;
   }
@@ -473,10 +485,8 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(28, 20, 13, 0.90) 0%, rgba(36, 27, 20, 0.76) 45%, rgba(46, 35, 26, 0.52) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(28, 20, 13, 0.90) 0%, rgba(36, 27, 20, 0.76) 45%, rgba(46, 35, 26, 0.52) 100%);
   backdrop-filter: brightness(0.9);
 }
 
@@ -814,40 +824,48 @@ body {
 
 /* RESPONSIVE LAYOUTS FOR 4-COLUMN GRIDS */
 @media (max-width: 1024px) {
+
   .categories-grid-four,
   .featured-grid-four {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
   .section-heading-clean {
     font-size: 1.85rem;
   }
 }
 
 @media (max-width: 640px) {
+
   .categories-grid-four,
   .featured-grid-four {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
+
   .category-img-container,
   .clean-product-img-wrap,
   .category-img-clean,
   .clean-product-img {
     border-radius: 14px;
   }
+
   .category-name-clean,
   .clean-product-title {
     font-size: 0.92rem;
   }
+
   .clean-product-price {
     font-size: 0.88rem;
     margin-bottom: 10px;
   }
+
   .btn-clean-add-cart {
     padding: 6px 12px;
     font-size: 0.82rem;
   }
+
   .section-heading-clean {
     font-size: 1.55rem;
   }
@@ -909,13 +927,11 @@ body {
 .category-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.05) 0%,
-    rgba(15, 23, 42, 0.35) 40%,
-    rgba(15, 23, 42, 0.88) 80%,
-    rgba(10, 15, 30, 0.96) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(15, 23, 42, 0.05) 0%,
+      rgba(15, 23, 42, 0.35) 40%,
+      rgba(15, 23, 42, 0.88) 80%,
+      rgba(10, 15, 30, 0.96) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1593,6 +1609,7 @@ body {
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
   .corp-ledger-row {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -1698,6 +1715,7 @@ body {
     opacity: 0;
     transform: scale(0.95) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1757,7 +1775,9 @@ body {
   color: #334155;
 }
 
-.form-input, .form-textarea, .form-select {
+.form-input,
+.form-textarea,
+.form-select {
   width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
@@ -1768,7 +1788,9 @@ body {
   transition: border-color 0.2s;
 }
 
-.form-input:focus, .form-textarea:focus, .form-select:focus {
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
   border-color: var(--accent-teal);
   box-shadow: 0 0 0 3px rgba(30, 112, 135, 0.12);
 }
@@ -1795,12 +1817,15 @@ body {
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .about-grid {
     grid-template-columns: 1fr;
   }
+
   .footer-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -1811,31 +1836,40 @@ body {
     justify-content: center;
     text-align: center;
   }
+
   .top-bar-contact {
     display: none;
   }
+
   .main-nav {
     padding: 14px 20px;
   }
+
   .nav-links {
     display: none;
   }
+
   .hero-section {
     min-height: auto;
     padding: 50px 0;
   }
+
   .hero-title {
     font-size: 2.2rem;
   }
+
   .categories-grid {
     grid-template-columns: 1fr;
   }
+
   .category-card {
     height: 320px;
   }
+
   .products-grid {
     grid-template-columns: 1fr;
   }
+
   .footer-container {
     grid-template-columns: 1fr;
   }
@@ -1889,9 +1923,17 @@ body {
 }
 
 @keyframes badgePop {
-  0% { transform: scale(0.6); }
-  70% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.6);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .product-title-btn {
@@ -2743,8 +2785,13 @@ body {
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .cart-drawer-header {
@@ -3113,6 +3160,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -3126,12 +3174,15 @@ body {
     padding: 24px;
     gap: 30px;
   }
+
   .detail-img-card {
     height: 340px;
   }
+
   .detail-product-title {
     font-size: 1.8rem;
   }
+
   .detail-actions-grid {
     grid-template-columns: 1fr;
   }
@@ -3215,12 +3266,10 @@ body {
 .hf-bento-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(12, 35, 56, 0.2) 0%,
-    rgba(12, 35, 56, 0.6) 45%,
-    rgba(12, 35, 56, 0.94) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(12, 35, 56, 0.2) 0%,
+      rgba(12, 35, 56, 0.6) 45%,
+      rgba(12, 35, 56, 0.94) 100%);
 }
 
 .hf-bento-hero-content {
@@ -3494,25 +3543,31 @@ body {
   .hf-bento-grid {
     grid-template-columns: 1fr;
   }
+
   .hf-bento-hero,
   .hf-bento-wide {
     grid-column: span 1;
   }
+
   .hf-bento-wide {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .hf-testimonials-grid {
     grid-template-columns: 1fr;
   }
+
   .hf-vip-banner {
     flex-direction: column;
     align-items: flex-start;
     padding: 32px;
   }
+
   .hf-vip-actions {
     width: 100%;
   }
+
   .hf-vip-btn-gold,
   .hf-vip-btn-outline {
     width: 100%;
@@ -3524,4 +3579,3 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
-
