@@ -1,22 +1,22 @@
-# Hassan Farid LLC - Wholesale & Retail E-Commerce Website
+# MKB Ventures Global LLC - Quality Products & E-Commerce Website
 
-Official digital catalog and wholesale procurement portal for **HASSAN FARID LLC**.
+Official digital catalog and wholesale procurement portal for **MKB VENTURES GLOBAL LLC**.
 
 ## 🌟 Overview
-* **Brand:** Hassan Farid LLC
-* **Slogan:** Quality finds, easy shopping, and dependable service
-* **Theme:** Luxury Espresso & Warm Caramel Amber
+* **Brand:** MKB Ventures Global LLC
+* **Slogan:** Quality Products Online
+* **Website:** https://mkbventuresgloballlc.com/
 * **Primary Contacts:**
-  * **Email:** info@hassanfaridllc.com
-  * **Phone / WhatsApp:** (+966) 50 741 5829
-  * **US Support:** +1 661-577-0052
-  * **Registered Address:** 30 N Gould St # 68479 Sheridan, WY 82801
+  * **Email:** info@mkbventuresgloballlc.com
+  * **Phone / WhatsApp:** (+966) 59 582 2656
+  * **Registered Address:** 30 N Gould St # 68445 Sheridan, WY 82801
 
-## 🛍️ Collections
-1. **Daily Essentials**
-2. **Fashion Finds**
-3. **Home Living**
-4. **Top Picks**
+## 🛍️ Product Catalog & Collections
+1. **Automotive Essentials** (₨ 25)
+2. **Baby Care Favorites** (₨ 19)
+3. **Beauty and Personal Care** (₨ 13)
+4. **Grocery and Gourmet** (₨ 10)
+5. **Home and Everyday Finds** (₨ 32)
 
 ## 💻 Tech Stack
 * React 18

@@ -7,7 +7,7 @@ import {
   LayoutGrid, Sparkles, ChevronDown, Package, Star
 } from 'lucide-react';
 import { categories, products } from './data/products';
-import logoImg from './images/hf-logo.svg';
+import logoImg from './images/mkb-logo.svg';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -24,7 +24,7 @@ export default function App() {
   // Cart & Product Detail state
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('hf_cart');
+      const saved = localStorage.getItem('mkb_cart');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -39,7 +39,7 @@ export default function App() {
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('hf_cart', JSON.stringify(cart));
+      localStorage.setItem('mkb_cart', JSON.stringify(cart));
     } catch (e) {}
   }, [cart]);
 
@@ -185,10 +185,10 @@ export default function App() {
         {/* UPPER TIER: MAIN NAVIGATION */}
         <div className="main-nav">
           <div className="nav-brand" onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }}>
-            <img src={logoImg} alt="Hassan Farid LLC Logo" className="brand-logo-img" />
+            <img src={logoImg} alt="MKB Ventures Global LLC Logo" className="brand-logo-img" />
             <div>
-              <div className="brand-title">Hassan Farid LLC</div>
-              <div className="brand-subtitle">Everyday Essentials, Fashion & Living</div>
+              <div className="brand-title">MKB Ventures Global LLC</div>
+              <div className="brand-subtitle">Automotive, Baby Care, Beauty, Gourmet & Home Essentials</div>
             </div>
           </div>
 
@@ -407,10 +407,10 @@ export default function App() {
             <div className="hero-overlay"></div>
             <div className="hero-container">
               <div className="hero-content">
-                <div className="hero-pretitle">HASSAN FARID LLC</div>
-                <h1 className="hero-title">Shop With Distinction</h1>
+                <div className="hero-pretitle">MKB VENTURES GLOBAL LLC</div>
+                <h1 className="hero-title">Quality Products Online</h1>
                 <p className="hero-description">
-                  Quality finds, easy shopping, and dependable service from Hassan Farid LLC.
+                  Quality finds, easy shopping, and dependable service from MKB Ventures Global LLC.
                 </p>
                 <div className="hero-actions">
                   <button 
@@ -481,7 +481,7 @@ export default function App() {
             </div>
 
             <div className="featured-grid-four">
-              {products.slice(0, 4).map((prod) => (
+              {products.map((prod) => (
                 <div key={prod.id} className="clean-product-card">
                   <div 
                     className="clean-product-img-wrap"
@@ -527,16 +527,16 @@ export default function App() {
             </div>
           </section>
 
-          {/* THE HASSAN FARID DISTINCTION EXPERIENCE (BENTO SHOWPIECE) */}
+          {/* THE MKB VENTURES DISTINCTION EXPERIENCE (BENTO SHOWPIECE) */}
           <section className="hf-experience-section">
             <div className="section-wrapper">
               <div className="section-header-center">
-                <span className="hf-eyebrow-badge">THE HASSAN FARID STANDARD</span>
+                <span className="hf-eyebrow-badge">THE MKB VENTURES STANDARD</span>
                 <h2 className="section-heading-clean" style={{ textAlign: 'center', marginTop: '10px' }}>
-                  Crafted For Everyday Living, Backed By Distinction
+                  Crafted For Everyday Living, Backed By Quality Sourcing
                 </h2>
                 <p className="hf-section-subtitle">
-                  We hand-select each collection for tactile elegance, enduring durability, and effortless daily performance.
+                  We hand-select each collection for practical elegance, enduring durability, and dependable quality.
                 </p>
               </div>
 
@@ -557,7 +557,7 @@ export default function App() {
                     <span className="hf-gold-pill">AUTHENTIC CURATION</span>
                     <h3 className="hf-bento-hero-title">Direct Workshop Sourcing</h3>
                     <p className="hf-bento-hero-desc">
-                      Every piece is procured directly from certified artisans and precision manufacturers, guaranteeing authentic materials and zero intermediaries.
+                      Every piece is procured directly from certified suppliers and precision manufacturers, guaranteeing authentic materials and transparent pricing.
                     </p>
                   </div>
                 </div>
@@ -584,7 +584,7 @@ export default function App() {
                   </div>
                   <h3 className="hf-bento-feature-title">100% Quality Guaranteed</h3>
                   <p className="hf-bento-feature-desc">
-                    From 18/8 food-grade steel to Japanese quartz movements, our products undergo rigorous QC before reaching our catalog.
+                    From automotive tools to skincare and gourmet foods, our products undergo rigorous QC before reaching our catalog.
                   </p>
                   <div className="hf-bento-stat">
                     <strong>1-Year</strong>
@@ -604,12 +604,12 @@ export default function App() {
                     </p>
                   </div>
                   <a 
-                    href="https://wa.me/966507415829" 
+                    href="https://wa.me/966595822656" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="hf-btn-whatsapp-pill"
                   >
-                    <span>WhatsApp (+966) 50 741 5829</span>
+                    <span>WhatsApp (+966) 59 582 2656</span>
                   </a>
                 </div>
               </div>
@@ -629,10 +629,10 @@ export default function App() {
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
-                      "The Minimalist Everyday Watch is genuinely remarkable. The leather strap is supple, the dial finish is immaculate, and it looks like a timepiece four times the price."
+                      "The Automotive Essentials kit is comprehensive, heavy-duty, and arrived promptly. Exactly what our fleet needed."
                     </p>
                     <div className="hf-testimonial-author">
-                      <strong>Hamad Al-Khaldi</strong>
+                      <strong>Adil Al-Ghamdi</strong>
                       <span>Verified Buyer • Riyadh, KSA</span>
                     </div>
                   </div>
@@ -644,11 +644,11 @@ export default function App() {
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
-                      "The Warm Glow Table Lamp created the exact cozy mood lighting we needed for our boutique studio. Packaging was rock solid with zero transit wear."
+                      "The Home and Everyday Finds collection added great utility and modern aesthetic to our home. Packaging was rock solid with zero transit wear."
                     </p>
                     <div className="hf-testimonial-author">
-                      <strong>Sarah Mansoor</strong>
-                      <span>Interior Stylist</span>
+                      <strong>Amina Tariq</strong>
+                      <span>Verified Customer</span>
                     </div>
                   </div>
 
@@ -659,10 +659,10 @@ export default function App() {
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
-                      "We placed a commercial order for the Insulated Steel Bottles and Canvas Backpacks. Quality is exceptional, and Hassan Farid LLC's communication was 10/10."
+                      "We placed a commercial order for Beauty and Baby Care products. Quality is exceptional, and MKB Ventures Global LLC's communication was 10/10."
                     </p>
                     <div className="hf-testimonial-author">
-                      <strong>Tariq Saeed</strong>
+                      <strong>Kamran Malik</strong>
                       <span>Retail Wholesale Partner</span>
                     </div>
                   </div>
@@ -680,7 +680,7 @@ export default function App() {
                 </div>
                 <div className="hf-vip-actions">
                   <a 
-                    href="https://wa.me/966507415829" 
+                    href="https://wa.me/966595822656" 
                     target="_blank" 
                     rel="noreferrer"
                     className="hf-vip-btn-gold"
@@ -688,23 +688,23 @@ export default function App() {
                     <span>Instant WhatsApp Chat</span>
                   </a>
                   <a 
-                    href="mailto:info@hassanfaridllc.com"
+                    href="mailto:info@mkbventuresgloballlc.com"
                     className="hf-vip-btn-outline"
                   >
-                    <span>Email info@hassanfaridllc.com</span>
+                    <span>Email info@mkbventuresgloballlc.com</span>
                   </a>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION: CONTACT HASSAN FARID LLC (ON HOME PAGE) */}
+          {/* SECTION: CONTACT MKB VENTURES GLOBAL LLC (ON HOME PAGE) */}
           <section id="contact-section" className="section-wrapper" style={{ padding: '60px 24px 70px' }}>
             <div style={{ maxWidth: '980px', margin: '0 auto' }}>
               <div className="section-header-center">
                 <span className="hf-eyebrow-badge">GET IN TOUCH</span>
                 <h2 className="section-heading-clean" style={{ textAlign: 'center', marginTop: '10px' }}>
-                  Contact Hassan Farid LLC
+                  Contact MKB Ventures Global LLC
                 </h2>
                 <p className="hf-section-subtitle">
                   We are at your service for catalog requests, wholesale bulk pricing, partnership discussions, or general inquiries.
@@ -721,8 +721,8 @@ export default function App() {
                         <Mail size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email</div>
-                          <a href="mailto:info@hassanfaridllc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
-                            info@hassanfaridllc.com
+                          <a href="mailto:info@mkbventuresgloballlc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
+                            info@mkbventuresgloballlc.com
                           </a>
                         </div>
                       </div>
@@ -730,9 +730,8 @@ export default function App() {
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                         <Phone size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Numbers</div>
-                          <div>Primary: <a href="tel:+966507415829" style={{ color: '#fff', textDecoration: 'none' }}>(+966) 50 741 5829</a></div>
-                          <div>US Support: <a href="tel:+16615770052" style={{ color: '#fff', textDecoration: 'none' }}>+1 661-577-0052</a></div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</div>
+                          <div>Direct: <a href="tel:+966595822656" style={{ color: '#fff', textDecoration: 'none' }}>(+966) 59 582 2656</a></div>
                         </div>
                       </div>
 
@@ -740,7 +739,7 @@ export default function App() {
                         <MapPin size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Official Registered Address</div>
-                          <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68479</div>
+                          <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68445</div>
                           <div style={{ color: '#cbd5e1' }}>Sheridan, WY 82801</div>
                         </div>
                       </div>
@@ -750,12 +749,12 @@ export default function App() {
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Direct</div>
                           <a 
-                            href="https://wa.me/966507415829" 
+                            href="https://wa.me/966595822656" 
                             target="_blank" 
                             rel="noreferrer"
                             style={{ color: '#25d366', fontWeight: '700', textDecoration: 'none' }}
                           >
-                            (+966) 50 741 5829 (Instant)
+                            (+966) 59 582 2656 (Instant)
                           </a>
                         </div>
                       </div>
@@ -763,7 +762,7 @@ export default function App() {
                   </div>
 
                   <div style={{ marginTop: '28px', paddingTop: '18px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem', color: '#b8aba0' }}>
-                    Managed by <strong>Hassan Farid</strong> • USA & Global Distribution
+                    Managed by <strong>MKB Ventures Global LLC</strong> • USA & Global Distribution
                   </div>
                 </div>
 
@@ -797,7 +796,7 @@ export default function App() {
 
                   {formSubmitted && (
                     <div style={{ marginTop: '16px', padding: '12px', background: '#ecfdf5', color: '#065f46', borderRadius: '8px', fontSize: '0.9rem' }}>
-                      ✓ Thank you! Your message has been received by Hassan Farid LLC. We will reply within 24 hours.
+                      ✓ Thank you! Your message has been received by MKB Ventures Global LLC. We will reply within 24 hours.
                     </div>
                   )}
                 </div>
@@ -859,21 +858,21 @@ export default function App() {
                     <Truck size={18} className="assurance-icon" />
                     <div>
                       <strong>Fast B2B Dispatch</strong>
-                      <span>Dispatched via Sheridan, WY & KSA Trade Hubs</span>
+                      <span>Dispatched via Sheridan, WY & Global Trade Hubs</span>
                     </div>
                   </div>
                   <div className="assurance-item">
                     <Award size={18} className="assurance-icon" />
                     <div>
                       <strong>Quality Inspected</strong>
-                      <span>Verified under Hassan Farid management</span>
+                      <span>Verified under MKB Ventures Global LLC management</span>
                     </div>
                   </div>
                   <div className="assurance-item">
                     <Building2 size={18} className="assurance-icon" />
                     <div>
                       <strong>Wyoming LLC Registered</strong>
-                      <span>Official Corporate Wholesale Entity #68479</span>
+                      <span>Official Corporate Wholesale Entity #68445</span>
                     </div>
                   </div>
                 </div>
@@ -990,7 +989,7 @@ export default function App() {
                     </button>
 
                     <a 
-                      href={`https://wa.me/966507415829?text=${encodeURIComponent(`Hello Hassan Farid, I want to order ${detailQuantity}x ${activeProduct.name} (SKU: ${activeProduct.sku}, Total: ₨ ${(activeProduct.priceNumeric * detailQuantity).toLocaleString()}) from Hassan Farid LLC.`)}`}
+                      href={`https://wa.me/966595822656?text=${encodeURIComponent(`Hello MKB Ventures Global LLC, I want to order ${detailQuantity}x ${activeProduct.name} (SKU: ${activeProduct.sku}, Total: ₨ ${(activeProduct.priceNumeric * detailQuantity).toLocaleString()}).`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="btn-detail-whatsapp"
@@ -1116,7 +1115,7 @@ export default function App() {
             <div className="detail-related-section">
               <div className="related-header">
                 <span className="section-tag">CATALOG ASSORTMENT</span>
-                <h2 className="related-title">Other Products from Hassan Farid</h2>
+                <h2 className="related-title">Other Products from MKB Ventures</h2>
               </div>
 
               <div className="products-grid">
@@ -1186,17 +1185,17 @@ export default function App() {
         <div className="section-wrapper" style={{ padding: '60px 24px' }}>
           <div style={{ maxWidth: '850px', margin: '0 auto', background: '#fff', padding: '48px', borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
             <span className="section-tag">COMPANY OVERVIEW</span>
-            <h1 className="section-title" style={{ marginBottom: '20px' }}>About Hassan Farid LLC</h1>
+            <h1 className="section-title" style={{ marginBottom: '20px' }}>About MKB Ventures Global LLC</h1>
             <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
-              <strong>HASSAN FARID LLC</strong> is owned and managed by <strong>Hassan Farid</strong>, operating from our registered headquarters at <strong>30 N Gould St # 68479 Sheridan, WY 82801</strong>. Our mission is to bridge the gap between quality manufacturers and businesses across retail, hospitality, industrial sectors, and e-commerce distribution channels.
+              <strong>MKB VENTURES GLOBAL LLC</strong> operates from our registered headquarters at <strong>30 N Gould St # 68445 Sheridan, WY 82801</strong>. Our mission is to bridge the gap between quality manufacturers and consumers worldwide across Automotive Essentials, Baby Care, Personal Care, Grocery, and Home Living.
             </p>
             <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
-              We pride ourselves on thoughtful sourcing — choosing products that deliver genuine performance, high customer satisfaction, and dependable margin structure for our wholesale partners worldwide.
+              We pride ourselves on thoughtful sourcing — choosing products that deliver genuine performance, high customer satisfaction, and dependable quality for retail and wholesale partners worldwide.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', margin: '36px 0' }}>
               <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
                 <h3 style={{ color: '#102a3a', fontSize: '1.1rem', marginBottom: '8px' }}>Integrity First</h3>
-                <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Transparent pricing, transparent communication, and authentic certificates of analysis.</p>
+                <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Transparent pricing, transparent communication, and verified product authenticity.</p>
               </div>
               <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
                 <h3 style={{ color: '#102a3a', fontSize: '1.1rem', marginBottom: '8px' }}>Logistics Agility</h3>
@@ -1204,7 +1203,7 @@ export default function App() {
               </div>
               <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
                 <h3 style={{ color: '#102a3a', fontSize: '1.1rem', marginBottom: '8px' }}>Partner Centric</h3>
-                <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Dedicated account managers ready to accommodate special pack sizes and schedules.</p>
+                <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Dedicated trade managers ready to accommodate customer requirements and custom schedules.</p>
               </div>
             </div>
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
@@ -1311,7 +1310,7 @@ export default function App() {
             <span className="section-tag">EXPAND WITH US</span>
             <h1 className="section-title" style={{ marginBottom: '16px' }}>Wholesale Partnerships</h1>
             <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.7, marginBottom: '24px' }}>
-              Whether you are an independent supermarket, a chain retailer, or an online merchant, HASSAN FARID LLC provides flexible minimums, volume price tiers, and dependable fulfillment.
+              Whether you are an independent supermarket, a chain retailer, or an online merchant, MKB VENTURES GLOBAL LLC provides flexible minimums, volume price tiers, and dependable fulfillment.
             </p>
 
             <form onSubmit={handleFormSubmit} className="modal-form">
@@ -1367,7 +1366,7 @@ export default function App() {
                 <CheckCircle2 size={24} color="#059669" />
                 <div>
                   <strong>Application Submitted Successfully!</strong>
-                  <p style={{ fontSize: '0.88rem' }}>Our wholesale accounts director Hassan Farid will review your details and contact you shortly.</p>
+                  <p style={{ fontSize: '0.88rem' }}>Our wholesale accounts director from MKB Ventures Global LLC will review your details and contact you shortly.</p>
                 </div>
               </div>
             )}
@@ -1480,7 +1479,7 @@ export default function App() {
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="section-header-center">
               <span className="section-tag">GET IN TOUCH</span>
-              <h1 className="section-title">Contact Hassan Farid LLC</h1>
+              <h1 className="section-title">Contact MKB Ventures Global LLC</h1>
               <p style={{ color: '#64748b', maxWidth: '600px', margin: '10px auto 0' }}>
                 We are at your service for catalog requests, partnership discussions, or general inquiries.
               </p>
@@ -1495,8 +1494,8 @@ export default function App() {
                     <Mail size={20} color="#c59b3f" />
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Email</div>
-                      <a href="mailto:info@hassanfaridllc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
-                        info@hassanfaridllc.com
+                      <a href="mailto:info@mkbventuresgloballlc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
+                        info@mkbventuresgloballlc.com
                       </a>
                     </div>
                   </div>
@@ -1504,9 +1503,8 @@ export default function App() {
                   <div style={{ display: 'flex', gap: '12px' }}>
                     <Phone size={20} color="#c59b3f" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Numbers</div>
-                      <div>Primary: <a href="tel:+966507415829" style={{ color: '#fff' }}>(+966) 50 741 5829</a></div>
-                      <div>US Support: <a href="tel:+16615770052" style={{ color: '#fff' }}>+1 661-577-0052</a></div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Number</div>
+                      <div>Direct: <a href="tel:+966595822656" style={{ color: '#fff' }}>(+966) 59 582 2656</a></div>
                     </div>
                   </div>
 
@@ -1514,7 +1512,7 @@ export default function App() {
                     <MapPin size={20} color="#c59b3f" />
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Official Registered Address</div>
-                      <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68479</div>
+                      <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68445</div>
                       <div style={{ color: '#fff' }}>Sheridan, WY 82801</div>
                     </div>
                   </div>
@@ -1524,12 +1522,12 @@ export default function App() {
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Chat</div>
                       <a 
-                        href="https://wa.me/966507415829" 
+                        href="https://wa.me/966595822656" 
                         target="_blank" 
                         rel="noreferrer"
                         style={{ color: '#25d366', fontWeight: '600', textDecoration: 'none' }}
                       >
-                        (+966) 50 741 5829 (Instant)
+                        (+966) 59 582 2656 (Instant)
                       </a>
                     </div>
                   </div>
@@ -1538,8 +1536,8 @@ export default function App() {
                     <Building2 size={20} color="#c59b3f" />
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Management</div>
-                      <div style={{ color: '#fff' }}>Hassan Farid</div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.85rem' }}>Owner & Managing Director</div>
+                      <div style={{ color: '#fff' }}>MKB Ventures Global LLC</div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.85rem' }}>Management & Operations</div>
                     </div>
                   </div>
                 </div>
@@ -1571,7 +1569,7 @@ export default function App() {
 
                 {formSubmitted && (
                   <div style={{ marginTop: '16px', padding: '12px', background: '#ecfdf5', color: '#065f46', borderRadius: '8px', fontSize: '0.9rem' }}>
-                    Thank you! Your message has been routed to Hassan Farid. We will reply within 24 hours.
+                    Thank you! Your message has been received by MKB Ventures Global LLC. We will reply within 24 hours.
                   </div>
                 )}
               </div>
@@ -1584,15 +1582,15 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-container">
           <div className="footer-brand">
-            <img src={logoImg} alt="Hassan Farid LLC Logo" className="footer-logo-img" />
-            <h3>Hassan Farid LLC</h3>
+            <img src={logoImg} alt="MKB Ventures Global LLC Logo" className="footer-logo-img" />
+            <h3>MKB Ventures Global LLC</h3>
             <p>
-              Professional wholesale, sourcing, and distribution services managed by Hassan Farid. Dedicated to supplying top tier merchandise with transparent global logistics.
+              Quality products online. Sourcing and distribution dedicated to supplying top tier merchandise with transparent global logistics.
             </p>
             <div style={{ marginTop: '16px', fontSize: '0.85rem', color: '#cbd5e1' }}>
-              <div><strong>Registered Address:</strong> 30 N Gould St # 68479 Sheridan, WY 82801</div>
-              <div><strong>Management:</strong> Hassan Farid</div>
-              <div><strong>Trade Desk Hotline:</strong> (+966) 50 741 5829 • info@hassanfaridllc.com</div>
+              <div><strong>Registered Address:</strong> 30 N Gould St # 68445 Sheridan, WY 82801</div>
+              <div><strong>Management:</strong> MKB Ventures Global LLC</div>
+              <div><strong>Trade Desk Hotline:</strong> (+966) 59 582 2656 • info@mkbventuresgloballlc.com</div>
             </div>
           </div>
 
@@ -1610,13 +1608,13 @@ export default function App() {
             <h4>Contacts</h4>
             <ul style={{ marginBottom: '20px' }}>
               <li>
-                <a href="mailto:info@hassanfaridllc.com">
-                  info@hassanfaridllc.com
+                <a href="mailto:info@mkbventuresgloballlc.com">
+                  info@mkbventuresgloballlc.com
                 </a>
               </li>
               <li>
-                <a href="tel:+966507415829">
-                  (+966) 50 741 5829
+                <a href="tel:+966595822656">
+                  (+966) 59 582 2656
                 </a>
               </li>
             </ul>
@@ -1681,10 +1679,10 @@ export default function App() {
 
         <div className="footer-bottom">
           <div>
-            © 2026 <strong>HASSAN FARID LLC</strong>. All rights reserved.
+            © 2026 <strong>MKB VENTURES GLOBAL LLC</strong>. All rights reserved.
           </div>
           <div style={{ color: '#64748b' }}>
-            Managed by Hassan Farid • 30 N Gould St # 68479 Sheridan, WY 82801
+            Managed by MKB Ventures Global LLC • 30 N Gould St # 68445 Sheridan, WY 82801
           </div>
         </div>
       </footer>
@@ -1809,8 +1807,8 @@ export default function App() {
 
                 <div className="cart-footer-actions">
                   <a 
-                    href={`https://wa.me/966507415829?text=${encodeURIComponent(
-                      `Hello Hassan Farid, I want to place an order from Hassan Farid LLC:\n\n` +
+                    href={`https://wa.me/966595822656?text=${encodeURIComponent(
+                      `Hello MKB Ventures Global LLC, I want to place an order:\n\n` +
                       cart.map(i => `• ${i.product.name} (SKU: ${i.product.sku}) - Qty: ${i.quantity} x ${i.product.price} = ₨ ${(i.product.priceNumeric * i.quantity).toLocaleString()}`).join('\n') +
                       `\n\nTotal Estimated: ₨ ${cartSubtotal.toLocaleString()}\nTotal Units: ${totalCartItems}`
                     )}`}
@@ -1899,7 +1897,7 @@ export default function App() {
               <>
                 <h3 className="modal-title">Wholesale Partnership Today</h3>
                 <p className="modal-subtitle">
-                  Connect with Hassan Farid and the Hassan Farid executive desk.
+                  Connect with MKB Ventures Global LLC executive desk.
                 </p>
                 <form onSubmit={handleFormSubmit} className="modal-form">
                   <div className="form-group">
@@ -1916,16 +1914,17 @@ export default function App() {
                   </div>
                   <div className="form-group">
                     <label className="form-label">Phone / WhatsApp *</label>
-                    <input type="tel" required placeholder="(+966) 50 741 5829 or US line" className="form-input" />
+                    <input type="tel" required placeholder="(+966) 59 582 2656 or US line" className="form-input" />
                   </div>
                   <div className="form-group">
                     <label className="form-label">Categories of Interest</label>
                     <select className="form-select">
                       <option>All Product Categories</option>
-                      <option>Everyday Essentials</option>
-                      <option>Home & Office</option>
-                      <option>Cleaning & Commercial</option>
-                      <option>Grocery & Pantry</option>
+                      <option>Automotive Essentials</option>
+                      <option>Baby Care Favorites</option>
+                      <option>Beauty and Personal Care</option>
+                      <option>Grocery and Gourmet</option>
+                      <option>Home and Everyday Finds</option>
                     </select>
                   </div>
                   <div className="form-group">
@@ -1933,7 +1932,7 @@ export default function App() {
                     <textarea rows={3} placeholder="Tell us about your distribution needs..." className="form-textarea"></textarea>
                   </div>
                   <button type="submit" className="btn-submit-modal">
-                    Connect With Hassan Farid
+                    Connect With MKB Ventures
                   </button>
                 </form>
               </>
@@ -1982,7 +1981,7 @@ export default function App() {
                 <CheckCircle2 size={24} color="#059669" />
                 <div>
                   <strong>Order / Inquiry Dispatched!</strong>
-                  <p style={{ fontSize: '0.85rem' }}>Hassan Farid and our logistics desk will confirm your order and send invoice details via WhatsApp and email promptly.</p>
+                  <p style={{ fontSize: '0.85rem' }}>MKB Ventures Global LLC and our logistics desk will confirm your order and send invoice details via WhatsApp and email promptly.</p>
                 </div>
               </div>
             )}
