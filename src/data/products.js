@@ -35,7 +35,7 @@ export const products = [
     category: 'home-kitchen',
     categoryName: 'Home & Kitchen',
     sku: 'MKB-KIT-010',
-    price: '₨ 28',
+    price: '$ 28',
     priceNumeric: 28,
     packSize: 'Premium Kitchen & Cookware Set',
     availability: 'In Stock (Ready to Ship)',
@@ -56,9 +56,9 @@ export const products = [
       'Commercial grade testing and guaranteed food safety standards'
     ],
     tiers: [
-      { range: '1 - 19 Units', price: '₨ 28', discount: 'Retail Base' },
-      { range: '20 - 99 Units', price: '₨ 24', discount: '14% Wholesale' },
-      { range: '100+ Units', price: '₨ 20', discount: '28% Volume Tier' }
+      { range: '1 - 19 Units', price: '$ 28', discount: 'Retail Base' },
+      { range: '20 - 99 Units', price: '$ 24', discount: '14% Wholesale' },
+      { range: '100+ Units', price: '$ 20', discount: '28% Volume Tier' }
     ],
     specs: [
       { label: 'Category', value: 'Home & Kitchen Cookware' },
@@ -73,7 +73,7 @@ export const products = [
     category: 'beauty-care',
     categoryName: 'Beauty Care',
     sku: 'MKB-BTY-016',
-    price: '₨ 18',
+    price: '$ 18',
     priceNumeric: 18,
     packSize: 'Daily Glow & Skincare Ritual Kit',
     availability: 'In Stock (Ready to Ship)',
@@ -94,9 +94,9 @@ export const products = [
       'Long-lasting hydration and protective moisture barriers'
     ],
     tiers: [
-      { range: '1 - 29 Units', price: '₨ 18', discount: 'Base Price' },
-      { range: '30 - 149 Units', price: '₨ 15', discount: '16% OFF' },
-      { range: '150+ Units', price: '₨ 12', discount: '33% Salon/Wholesale' }
+      { range: '1 - 29 Units', price: '$ 18', discount: 'Base Price' },
+      { range: '30 - 149 Units', price: '$ 15', discount: '16% OFF' },
+      { range: '150+ Units', price: '$ 12', discount: '33% Salon/Wholesale' }
     ],
     specs: [
       { label: 'Skin Type', value: 'All Skin Types' },
@@ -111,7 +111,7 @@ export const products = [
     category: 'pet-supplies',
     categoryName: 'Pet Supplies',
     sku: 'MKB-PET-022',
-    price: '₨ 22',
+    price: '$ 22',
     priceNumeric: 22,
     packSize: 'All-in-One Pet Grooming & Feeding Kit',
     availability: 'In Stock (Ready to Ship)',
@@ -132,9 +132,9 @@ export const products = [
       'Easy to disinfect and built for high-energy pet play'
     ],
     tiers: [
-      { range: '1 - 19 Units', price: '₨ 22', discount: 'Retail Base' },
-      { range: '20 - 79 Units', price: '₨ 18', discount: '18% Wholesale' },
-      { range: '80+ Units', price: '₨ 15', discount: '31% Bulk Distribution' }
+      { range: '1 - 19 Units', price: '$ 22', discount: 'Retail Base' },
+      { range: '20 - 79 Units', price: '$ 18', discount: '18% Wholesale' },
+      { range: '80+ Units', price: '$ 15', discount: '31% Bulk Distribution' }
     ],
     specs: [
       { label: 'Pet Type', value: 'Dogs, Cats & Small Pets' },
@@ -149,7 +149,7 @@ export const products = [
     category: 'automotive',
     categoryName: 'Automotive Essentials',
     sku: 'MKB-AUTO-012',
-    price: '₨ 25',
+    price: '$ 25',
     priceNumeric: 25,
     packSize: 'Complete Roadside & Car Care Kit',
     availability: 'In Stock (Ready to Ship)',
@@ -170,9 +170,9 @@ export const products = [
       'Standard manufacturer-backed quality assurance'
     ],
     tiers: [
-      { range: '1 - 19 Units', price: '₨ 25', discount: 'Retail Base' },
-      { range: '20 - 99 Units', price: '₨ 22', discount: '12% Wholesale' },
-      { range: '100+ Units', price: '₨ 19', discount: '24% Volume Tier' }
+      { range: '1 - 19 Units', price: '$ 25', discount: 'Retail Base' },
+      { range: '20 - 99 Units', price: '$ 22', discount: '12% Wholesale' },
+      { range: '100+ Units', price: '$ 19', discount: '24% Volume Tier' }
     ],
     specs: [
       { label: 'Category', value: 'Automotive Maintenance & Accessories' },
@@ -187,7 +187,7 @@ export const products = [
     category: 'baby-care',
     categoryName: 'Baby Care Favorites',
     sku: 'MKB-BABY-014',
-    price: '₨ 19',
+    price: '$ 19',
     priceNumeric: 19,
     packSize: 'Gentle Care Bundle',
     availability: 'In Stock (Ready to Ship)',
@@ -208,9 +208,9 @@ export const products = [
       'Ergonomic, easy-grip designs for seamless everyday feeding and care'
     ],
     tiers: [
-      { range: '1 - 24 Units', price: '₨ 19', discount: 'Standard Price' },
-      { range: '25 - 99 Units', price: '₨ 16', discount: '15% Bulk Order' },
-      { range: '100+ Units', price: '₨ 14', discount: '26% Pallet Rate' }
+      { range: '1 - 24 Units', price: '$ 19', discount: 'Standard Price' },
+      { range: '25 - 99 Units', price: '$ 16', discount: '15% Bulk Order' },
+      { range: '100+ Units', price: '$ 14', discount: '26% Pallet Rate' }
     ],
     specs: [
       { label: 'Age Group', value: '0 - 36 Months' },
@@ -225,7 +225,7 @@ export const products = [
     category: 'grocery-gourmet',
     categoryName: 'Grocery and Gourmet',
     sku: 'MKB-GRO-018',
-    price: '₨ 10',
+    price: '$ 10',
     priceNumeric: 10,
     packSize: 'Pantry Fresh Box',
     availability: 'In Stock (Ready to Ship)',
@@ -246,9 +246,9 @@ export const products = [
       'Standardized international quality and hygiene certifications'
     ],
     tiers: [
-      { range: '1 - 49 Units', price: '₨ 10', discount: 'Regular Price' },
-      { range: '50 - 199 Units', price: '₨ 8.50', discount: '15% Bulk' },
-      { range: '200+ Units', price: '₨ 7.20', discount: '28% Commercial MOQ' }
+      { range: '1 - 49 Units', price: '$ 10', discount: 'Regular Price' },
+      { range: '50 - 199 Units', price: '$ 8.50', discount: '15% Bulk' },
+      { range: '200+ Units', price: '$ 7.20', discount: '28% Commercial MOQ' }
     ],
     specs: [
       { label: 'Storage', value: 'Cool, Dry Environment' },

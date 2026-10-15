@@ -7,6 +7,7 @@ import {
   LayoutGrid, Sparkles, ChevronDown, Package, Star
 } from 'lucide-react';
 import { categories, products } from './data/products';
+import { siteConfig } from './data/siteConfig';
 import logoImg from './images/mkb-logo.svg';
 
 export default function App() {
@@ -35,6 +36,20 @@ export default function App() {
   const [detailQuantity, setDetailQuantity] = useState(1);
   const [activeDetailTab, setActiveDetailTab] = useState('description');
   const [toastMessage, setToastMessage] = useState(null);
+
+  // Apply theme & document title from siteConfig
+  useEffect(() => {
+    if (siteConfig.theme) {
+      const root = document.documentElement;
+      if (siteConfig.theme.primaryNavy) root.style.setProperty('--primary-navy', siteConfig.theme.primaryNavy);
+      if (siteConfig.theme.secondaryTeal) root.style.setProperty('--secondary-teal', siteConfig.theme.secondaryTeal);
+      if (siteConfig.theme.accentTeal) root.style.setProperty('--accent-teal', siteConfig.theme.accentTeal);
+      if (siteConfig.theme.accentHover) root.style.setProperty('--accent-teal-hover', siteConfig.theme.accentHover);
+    }
+    if (siteConfig.companyName) {
+      document.title = siteConfig.companyName + (siteConfig.tagline ? ' | ' + siteConfig.tagline : '');
+    }
+  }, []);
 
   // Sync cart to localStorage
   useEffect(() => {
@@ -185,10 +200,10 @@ export default function App() {
         {/* UPPER TIER: MAIN NAVIGATION */}
         <div className="main-nav">
           <div className="nav-brand" onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }}>
-            <img src={logoImg} alt="MKB Ventures Global LLC Logo" className="brand-logo-img" />
+            <img src={siteConfig.logo || logoImg} alt={`${siteConfig.companyName} Logo`} className="brand-logo-img" />
             <div>
-              <div className="brand-title">MKB Ventures Global LLC</div>
-              <div className="brand-subtitle">Home & Kitchen, Beauty Care & Pet Supplies</div>
+              <div className="brand-title">{siteConfig.companyName}</div>
+              <div className="brand-subtitle">{siteConfig.tagline}</div>
             </div>
           </div>
 
@@ -327,9 +342,9 @@ export default function App() {
                 <span>Fast Global Dispatch</span>
               </span>
               <span className="blue-perk-divider">•</span>
-              <a href="tel:+966507415829" className="blue-perk-phone">
+              <a href={`tel:${siteConfig.phonePrimaryTel}`} className="blue-perk-phone">
                 <Phone size={13} />
-                <span>(+966) 50 741 5829</span>
+                <span>{siteConfig.phonePrimary}</span>
               </a>
             </div>
           </div>
@@ -418,10 +433,10 @@ export default function App() {
             <div className="hero-overlay"></div>
             <div className="hero-container">
               <div className="hero-content">
-                <div className="hero-pretitle">MKB VENTURES GLOBAL LLC</div>
+                <div className="hero-pretitle">{siteConfig.legalName}</div>
                 <h1 className="hero-title">Quality Products Online</h1>
                 <p className="hero-description">
-                  Quality finds, easy shopping, and dependable service from MKB Ventures Global LLC.
+                  {siteConfig.heroSubtitle}
                 </p>
                 <div className="hero-actions">
                   <button 
@@ -556,7 +571,7 @@ export default function App() {
           <section className="hf-experience-section">
             <div className="section-wrapper">
               <div className="section-header-center">
-                <span className="hf-eyebrow-badge">THE MKB VENTURES STANDARD</span>
+                <span className="hf-eyebrow-badge">{siteConfig.eyebrowStandard}</span>
                 <h2 className="section-heading-clean" style={{ textAlign: 'center', marginTop: '10px' }}>
                   Crafted For Everyday Living, Backed By Quality Sourcing
                 </h2>
@@ -629,12 +644,12 @@ export default function App() {
                     </p>
                   </div>
                   <a 
-                    href="https://wa.me/966595822656" 
+                    href="https://wa.me/${siteConfig.whatsappNumber}" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="hf-btn-whatsapp-pill"
                   >
-                    <span>WhatsApp (+966) 59 582 2656</span>
+                    <span>WhatsApp {siteConfig.phoneDirect}</span>
                   </a>
                 </div>
               </div>
@@ -684,7 +699,7 @@ export default function App() {
                       ))}
                     </div>
                     <p className="hf-testimonial-quote">
-                      "We placed a commercial order for Beauty and Baby Care products. Quality is exceptional, and MKB Ventures Global LLC's communication was 10/10."
+                      "{siteConfig.testimonial.quote}"
                     </p>
                     <div className="hf-testimonial-author">
                       <strong>Kamran Malik</strong>
@@ -705,7 +720,7 @@ export default function App() {
                 </div>
                 <div className="hf-vip-actions">
                   <a 
-                    href="https://wa.me/966595822656" 
+                    href="https://wa.me/${siteConfig.whatsappNumber}" 
                     target="_blank" 
                     rel="noreferrer"
                     className="hf-vip-btn-gold"
@@ -713,10 +728,10 @@ export default function App() {
                     <span>Instant WhatsApp Chat</span>
                   </a>
                   <a 
-                    href="mailto:info@mkbventuresgloballlc.com"
+                    href={`mailto:${siteConfig.email}`}
                     className="hf-vip-btn-outline"
                   >
-                    <span>Email info@mkbventuresgloballlc.com</span>
+                    <span>Email {siteConfig.email}</span>
                   </a>
                 </div>
               </div>
@@ -729,7 +744,7 @@ export default function App() {
               <div className="section-header-center">
                 <span className="hf-eyebrow-badge">GET IN TOUCH</span>
                 <h2 className="section-heading-clean" style={{ textAlign: 'center', marginTop: '10px' }}>
-                  Contact MKB Ventures Global LLC
+                  Contact {siteConfig.companyName}
                 </h2>
                 <p className="hf-section-subtitle">
                   We are at your service for catalog requests, wholesale bulk pricing, partnership discussions, or general inquiries.
@@ -746,8 +761,8 @@ export default function App() {
                         <Mail size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email</div>
-                          <a href="mailto:info@mkbventuresgloballlc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
-                            info@mkbventuresgloballlc.com
+                          <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
+                            {siteConfig.email}
                           </a>
                         </div>
                       </div>
@@ -756,7 +771,7 @@ export default function App() {
                         <Phone size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</div>
-                          <div>Direct: <a href="tel:+966595822656" style={{ color: '#fff', textDecoration: 'none' }}>(+966) 59 582 2656</a></div>
+                          <div>Direct: <a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff', textDecoration: 'none' }}>{siteConfig.phoneDirect}</a></div>
                         </div>
                       </div>
 
@@ -764,8 +779,8 @@ export default function App() {
                         <MapPin size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Official Registered Address</div>
-                          <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68445</div>
-                          <div style={{ color: '#cbd5e1' }}>Sheridan, WY 82801</div>
+                          <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.address.line1}</div>
+                          <div style={{ color: '#cbd5e1' }}>{siteConfig.address.line2}</div>
                         </div>
                       </div>
 
@@ -774,12 +789,12 @@ export default function App() {
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Direct</div>
                           <a 
-                            href="https://wa.me/966595822656" 
+                            href="https://wa.me/${siteConfig.whatsappNumber}" 
                             target="_blank" 
                             rel="noreferrer"
                             style={{ color: '#25d366', fontWeight: '700', textDecoration: 'none' }}
                           >
-                            (+966) 59 582 2656 (Instant)
+                            {siteConfig.phoneDirect} (Instant)
                           </a>
                         </div>
                       </div>
@@ -787,7 +802,7 @@ export default function App() {
                   </div>
 
                   <div style={{ marginTop: '28px', paddingTop: '18px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem', color: '#b8aba0' }}>
-                    Managed by <strong>MKB Ventures Global LLC</strong> • USA & Global Distribution
+                    Managed by <strong>{siteConfig.companyName}</strong> • USA & Global Distribution
                   </div>
                 </div>
 
@@ -821,7 +836,7 @@ export default function App() {
 
                   {formSubmitted && (
                     <div style={{ marginTop: '16px', padding: '12px', background: '#ecfdf5', color: '#065f46', borderRadius: '8px', fontSize: '0.9rem' }}>
-                      ✓ Thank you! Your message has been received by MKB Ventures Global LLC. We will reply within 24 hours.
+                      ✓ Thank you! Your message has been received by {siteConfig.companyName}. We will reply within 24 hours.
                     </div>
                   )}
                 </div>
@@ -883,14 +898,14 @@ export default function App() {
                     <Truck size={18} className="assurance-icon" />
                     <div>
                       <strong>Fast B2B Dispatch</strong>
-                      <span>Dispatched via Sheridan, WY & Global Trade Hubs</span>
+                      <span>{siteConfig.hubs.originText}</span>
                     </div>
                   </div>
                   <div className="assurance-item">
                     <Award size={18} className="assurance-icon" />
                     <div>
                       <strong>Quality Inspected</strong>
-                      <span>Verified under MKB Ventures Global LLC management</span>
+                      <span>Verified under {siteConfig.companyName} management</span>
                     </div>
                   </div>
                   <div className="assurance-item">
@@ -1000,7 +1015,7 @@ export default function App() {
                     </div>
 
                     <div className="subtotal-preview">
-                      Subtotal: <strong>₨ {(activeProduct.priceNumeric * detailQuantity).toLocaleString()}</strong>
+                      Subtotal: <strong>{siteConfig.currencySymbol || "$"} {(activeProduct.priceNumeric * detailQuantity).toLocaleString()}</strong>
                     </div>
                   </div>
 
@@ -1014,7 +1029,7 @@ export default function App() {
                     </button>
 
                     <a 
-                      href={`https://wa.me/966595822656?text=${encodeURIComponent(`Hello MKB Ventures Global LLC, I want to order ${detailQuantity}x ${activeProduct.name} (SKU: ${activeProduct.sku}, Total: ₨ ${(activeProduct.priceNumeric * detailQuantity).toLocaleString()}).`)}`}
+                      href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(`Hello ${siteConfig.companyName}, I want to order ${detailQuantity}x ${activeProduct.name} (SKU: ${activeProduct.sku}, Total: ${siteConfig.currencySymbol || "$"}${(activeProduct.priceNumeric * detailQuantity).toLocaleString()}).`)}`}
                       target="_blank"
                       rel="noreferrer"
                       className="btn-detail-whatsapp"
@@ -1037,8 +1052,8 @@ export default function App() {
                 {/* Contact Help Strip */}
                 <div className="detail-help-strip">
                   <span>Questions about bulk orders?</span>
-                  <a href="tel:+966507415829" className="help-link">
-                    <Phone size={14} /> (+966) 50 741 5829
+                  <a href={`tel:${siteConfig.phonePrimaryTel}`} className="help-link">
+                    <Phone size={14} /> {siteConfig.phonePrimary}
                   </a>
                   <span className="sep">•</span>
                   <a href="mailto:info@hassanfaridllc.com" className="help-link">
@@ -1120,7 +1135,7 @@ export default function App() {
                       </div>
                       <div className="ship-card">
                         <h4>Shipping Hubs & Carriers</h4>
-                        <p>Dispatched from our primary registered facilities at Sheridan, Wyoming (US domestic & North America) and our Middle East trade hub in KSA.</p>
+                        <p>{siteConfig.hubs.dispatchNote}</p>
                       </div>
                       <div className="ship-card">
                         <h4>Pallet & Container Loads</h4>
@@ -1140,7 +1155,7 @@ export default function App() {
             <div className="detail-related-section">
               <div className="related-header">
                 <span className="section-tag">CATALOG ASSORTMENT</span>
-                <h2 className="related-title">Other Products from MKB Ventures</h2>
+                <h2 className="related-title">Other Products from {siteConfig.shortName}</h2>
               </div>
 
               <div className="products-grid">
@@ -1210,9 +1225,9 @@ export default function App() {
         <div className="section-wrapper" style={{ padding: '60px 24px' }}>
           <div style={{ maxWidth: '850px', margin: '0 auto', background: '#fff', padding: '48px', borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
             <span className="section-tag">COMPANY OVERVIEW</span>
-            <h1 className="section-title" style={{ marginBottom: '20px' }}>About MKB Ventures Global LLC</h1>
+            <h1 className="section-title" style={{ marginBottom: '20px' }}>About {siteConfig.companyName}</h1>
             <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
-              <strong>MKB VENTURES GLOBAL LLC</strong> operates from our registered headquarters at <strong>30 N Gould St # 68445 Sheridan, WY 82801</strong>. Our mission is to bridge the gap between quality manufacturers and consumers worldwide across Automotive Essentials, Baby Care, Personal Care, Grocery, and Home Living.
+              <strong>MKB VENTURES GLOBAL LLC</strong> operates from our registered headquarters at <strong>{siteConfig.address.full}</strong>. Our mission is to bridge the gap between quality manufacturers and consumers worldwide across Automotive Essentials, Baby Care, Personal Care, Grocery, and Home Living.
             </p>
             <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
               We pride ourselves on thoughtful sourcing — choosing products that deliver genuine performance, high customer satisfaction, and dependable quality for retail and wholesale partners worldwide.
@@ -1335,7 +1350,7 @@ export default function App() {
             <span className="section-tag">EXPAND WITH US</span>
             <h1 className="section-title" style={{ marginBottom: '16px' }}>Wholesale Partnerships</h1>
             <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.7, marginBottom: '24px' }}>
-              Whether you are an independent supermarket, a chain retailer, or an online merchant, MKB VENTURES GLOBAL LLC provides flexible minimums, volume price tiers, and dependable fulfillment.
+              Whether you are an independent supermarket, a chain retailer, or an online merchant, {siteConfig.legalName} provides flexible minimums, volume price tiers, and dependable fulfillment.
             </p>
 
             <form onSubmit={handleFormSubmit} className="modal-form">
@@ -1391,7 +1406,7 @@ export default function App() {
                 <CheckCircle2 size={24} color="#059669" />
                 <div>
                   <strong>Application Submitted Successfully!</strong>
-                  <p style={{ fontSize: '0.88rem' }}>Our wholesale accounts director from MKB Ventures Global LLC will review your details and contact you shortly.</p>
+                  <p style={{ fontSize: '0.88rem' }}>Our wholesale accounts director from {siteConfig.companyName} will review your details and contact you shortly.</p>
                 </div>
               </div>
             )}
@@ -1432,13 +1447,13 @@ export default function App() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <Phone size={20} color="#38bdf8" />
-                <a href="tel:+966507415829" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
-                  (+966) 50 741 5829
+                <a href={`tel:${siteConfig.phonePrimaryTel}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
+                  {siteConfig.phonePrimary}
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <MapPin size={20} color="#38bdf8" />
-                <span>30 N Gould St # 68479 Sheridan, WY 82801</span>
+                <span>{siteConfig.address.full}</span>
               </div>
             </div>
 
@@ -1468,7 +1483,7 @@ export default function App() {
                   </div>
                   <div className="form-group">
                     <label className="form-label">Direct Phone / WhatsApp *</label>
-                    <input type="tel" required placeholder="(+966) 50 741 5829 or US phone" className="form-input" />
+                    <input type="tel" required placeholder="{siteConfig.phonePrimary} or US phone" className="form-input" />
                   </div>
                 </div>
                 <div className="form-group">
@@ -1519,8 +1534,8 @@ export default function App() {
                     <Mail size={20} color="#c59b3f" />
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Email</div>
-                      <a href="mailto:info@mkbventuresgloballlc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
-                        info@mkbventuresgloballlc.com
+                      <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
+                        {siteConfig.email}
                       </a>
                     </div>
                   </div>
@@ -1529,7 +1544,7 @@ export default function App() {
                     <Phone size={20} color="#c59b3f" />
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Number</div>
-                      <div>Direct: <a href="tel:+966595822656" style={{ color: '#fff' }}>(+966) 59 582 2656</a></div>
+                      <div>Direct: <a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff' }}>{siteConfig.phoneDirect}</a></div>
                     </div>
                   </div>
 
@@ -1538,7 +1553,7 @@ export default function App() {
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Official Registered Address</div>
                       <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68445</div>
-                      <div style={{ color: '#fff' }}>Sheridan, WY 82801</div>
+                      <div style={{ color: '#fff' }}>{siteConfig.address.line2}</div>
                     </div>
                   </div>
 
@@ -1547,12 +1562,12 @@ export default function App() {
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Chat</div>
                       <a 
-                        href="https://wa.me/966595822656" 
+                        href="https://wa.me/${siteConfig.whatsappNumber}" 
                         target="_blank" 
                         rel="noreferrer"
                         style={{ color: '#25d366', fontWeight: '600', textDecoration: 'none' }}
                       >
-                        (+966) 59 582 2656 (Instant)
+                        {siteConfig.phoneDirect} (Instant)
                       </a>
                     </div>
                   </div>
@@ -1594,7 +1609,7 @@ export default function App() {
 
                 {formSubmitted && (
                   <div style={{ marginTop: '16px', padding: '12px', background: '#ecfdf5', color: '#065f46', borderRadius: '8px', fontSize: '0.9rem' }}>
-                    Thank you! Your message has been received by MKB Ventures Global LLC. We will reply within 24 hours.
+                    Thank you! Your message has been received by {siteConfig.companyName}. We will reply within 24 hours.
                   </div>
                 )}
               </div>
@@ -1607,15 +1622,15 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-container">
           <div className="footer-brand">
-            <img src={logoImg} alt="MKB Ventures Global LLC Logo" className="footer-logo-img" />
-            <h3>MKB Ventures Global LLC</h3>
+            <img src={siteConfig.logo || logoImg} alt={`${siteConfig.companyName} Logo`} className="footer-logo-img" />
+            <h3>{siteConfig.companyName}</h3>
             <p>
               Quality products online. Sourcing and distribution dedicated to supplying top tier merchandise with transparent global logistics.
             </p>
             <div style={{ marginTop: '16px', fontSize: '0.85rem', color: '#cbd5e1' }}>
-              <div><strong>Registered Address:</strong> 30 N Gould St # 68445 Sheridan, WY 82801</div>
+              <div><strong>Registered Address:</strong> {siteConfig.address.full}</div>
               <div><strong>Management:</strong> MKB Ventures Global LLC</div>
-              <div><strong>Trade Desk Hotline:</strong> (+966) 59 582 2656 • info@mkbventuresgloballlc.com</div>
+              <div><strong>Trade Desk Hotline:</strong> {siteConfig.phoneDirect} • {siteConfig.email}</div>
             </div>
           </div>
 
@@ -1633,13 +1648,13 @@ export default function App() {
             <h4>Contacts</h4>
             <ul style={{ marginBottom: '20px' }}>
               <li>
-                <a href="mailto:info@mkbventuresgloballlc.com">
-                  info@mkbventuresgloballlc.com
+                <a href={`mailto:${siteConfig.email}`}>
+                  {siteConfig.email}
                 </a>
               </li>
               <li>
-                <a href="tel:+966595822656">
-                  (+966) 59 582 2656
+                <a href={`tel:${siteConfig.phoneDirectTel}`}>
+                  {siteConfig.phoneDirect}
                 </a>
               </li>
             </ul>
@@ -1704,10 +1719,10 @@ export default function App() {
 
         <div className="footer-bottom">
           <div>
-            © 2026 <strong>MKB VENTURES GLOBAL LLC</strong>. All rights reserved.
+            © {new Date().getFullYear()} <strong>{siteConfig.legalName}</strong>. All rights reserved.
           </div>
           <div style={{ color: '#64748b' }}>
-            Managed by MKB Ventures Global LLC • 30 N Gould St # 68445 Sheridan, WY 82801
+            Managed by MKB Ventures Global LLC • {siteConfig.address.full}
           </div>
         </div>
       </footer>
@@ -1781,7 +1796,7 @@ export default function App() {
                         </h4>
                         <div className="cart-item-price-row">
                           <span className="cart-unit-price">{item.product.price} / unit</span>
-                          <span className="cart-line-total">₨ {(item.product.priceNumeric * item.quantity).toLocaleString()}</span>
+                          <span className="cart-line-total">{siteConfig.currencySymbol || "$"} {(item.product.priceNumeric * item.quantity).toLocaleString()}</span>
                         </div>
                         <div className="cart-stepper-row">
                           <div className="cart-qty-stepper">
@@ -1825,17 +1840,17 @@ export default function App() {
                   </div>
                   <div className="summary-row subtotal">
                     <span>Estimated Subtotal:</span>
-                    <strong className="summary-amount">₨ {cartSubtotal.toLocaleString()}</strong>
+                    <strong className="summary-amount">{siteConfig.currencySymbol || "$"} {cartSubtotal.toLocaleString()}</strong>
                   </div>
                   <p className="summary-note">Wholesale tiered rates and freight confirmed upon order dispatch.</p>
                 </div>
 
                 <div className="cart-footer-actions">
                   <a 
-                    href={`https://wa.me/966595822656?text=${encodeURIComponent(
-                      `Hello MKB Ventures Global LLC, I want to place an order:\n\n` +
-                      cart.map(i => `• ${i.product.name} (SKU: ${i.product.sku}) - Qty: ${i.quantity} x ${i.product.price} = ₨ ${(i.product.priceNumeric * i.quantity).toLocaleString()}`).join('\n') +
-                      `\n\nTotal Estimated: ₨ ${cartSubtotal.toLocaleString()}\nTotal Units: ${totalCartItems}`
+                    href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
+                      `Hello ${siteConfig.companyName}, I want to place an order:\n\n` +
+                      cart.map(i => `• ${i.product.name} (SKU: ${i.product.sku}) - Qty: ${i.quantity} x ${i.product.price} = ${siteConfig.currencySymbol || "$"}${(i.product.priceNumeric * i.quantity).toLocaleString()}`).join('\n') +
+                      `\n\nTotal Estimated: ${siteConfig.currencySymbol || "$"}${cartSubtotal.toLocaleString()}\nTotal Units: ${totalCartItems}`
                     )}`}
                     target="_blank"
                     rel="noreferrer"
@@ -1922,7 +1937,7 @@ export default function App() {
               <>
                 <h3 className="modal-title">Wholesale Partnership Today</h3>
                 <p className="modal-subtitle">
-                  Connect with MKB Ventures Global LLC executive desk.
+                  Connect with {siteConfig.companyName} executive desk.
                 </p>
                 <form onSubmit={handleFormSubmit} className="modal-form">
                   <div className="form-group">
@@ -1939,7 +1954,7 @@ export default function App() {
                   </div>
                   <div className="form-group">
                     <label className="form-label">Phone / WhatsApp *</label>
-                    <input type="tel" required placeholder="(+966) 59 582 2656 or US line" className="form-input" />
+                    <input type="tel" required placeholder="{siteConfig.phoneDirect} or US line" className="form-input" />
                   </div>
                   <div className="form-group">
                     <label className="form-label">Categories of Interest</label>
@@ -1955,7 +1970,7 @@ export default function App() {
                     <textarea rows={3} placeholder="Tell us about your distribution needs..." className="form-textarea"></textarea>
                   </div>
                   <button type="submit" className="btn-submit-modal">
-                    Connect With MKB Ventures
+                    Connect With {siteConfig.shortName}
                   </button>
                 </form>
               </>
@@ -1965,7 +1980,7 @@ export default function App() {
               <>
                 <h3 className="modal-title">Wholesale Checkout / Purchase Order</h3>
                 <p className="modal-subtitle">
-                  Submitting order for: <strong>{totalCartItems} units • Total: ₨ {cartSubtotal.toLocaleString()}</strong>
+                  Submitting order for: <strong>{totalCartItems} units • Total: {siteConfig.currencySymbol || "$"} {cartSubtotal.toLocaleString()}</strong>
                 </p>
                 <form onSubmit={handleFormSubmit} className="modal-form">
                   <div className="form-group">
@@ -1993,7 +2008,7 @@ export default function App() {
                     <textarea rows={2} placeholder="Optional delivery instructions, dock requirements..." className="form-textarea"></textarea>
                   </div>
                   <button type="submit" className="btn-submit-modal">
-                    Confirm & Place Purchase Order (₨ {cartSubtotal.toLocaleString()})
+                    Confirm & Place Purchase Order ({siteConfig.currencySymbol || "$"} {cartSubtotal.toLocaleString()})
                   </button>
                 </form>
               </>
@@ -2004,7 +2019,7 @@ export default function App() {
                 <CheckCircle2 size={24} color="#059669" />
                 <div>
                   <strong>Order / Inquiry Dispatched!</strong>
-                  <p style={{ fontSize: '0.85rem' }}>MKB Ventures Global LLC and our logistics desk will confirm your order and send invoice details via WhatsApp and email promptly.</p>
+                  <p style={{ fontSize: '0.85rem' }}>{siteConfig.companyName} and our logistics desk will confirm your order and send invoice details via WhatsApp and email promptly.</p>
                 </div>
               </div>
             )}
