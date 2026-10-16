@@ -9,12 +9,12 @@ import defaultLogo from '../images/zulfiqaar-logo.svg';
 
 export const siteConfig = {
   // 🏢 Company Information
-  companyName: "Amyazlaan LLC",
-  shortName: "Amyazlaan",
-  legalName: "AMYAZLAAN LLC",
+  companyName: "Amy Azlaan LLC",
+  shortName: "Amy Azlaan",
+  legalName: "AMY AZLAAN LLC",
   tagline: "Premium Wholesale, General Trading & Global Distribution",
-  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Amyazlaan LLC.",
-  eyebrowStandard: "THE AMYAZLAAN STANDARD OF EXCELLENCE",
+  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Amy Azlaan LLC.",
+  eyebrowStandard: "THE AMY AZLAAN STANDARD OF EXCELLENCE",
 
   // 📞 Phone, WhatsApp & Email
   phonePrimary: "(+966) 53 098 7507",       // Display phone on top nav
@@ -42,13 +42,13 @@ export const siteConfig = {
 
   // 📖 About Page Description & Mission
   about: {
-    mission: "At Amyazlaan LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
-    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Amyazlaan LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
+    mission: "At Amy Azlaan LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
+    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Amy Azlaan LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
   },
 
   // ⭐ Testimonial Quote
   testimonial: {
-    quote: "Partnering with Amyazlaan LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
+    quote: "Partnering with Amy Azlaan LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
     author: "Verified Commercial Trade Partner"
   },
 
