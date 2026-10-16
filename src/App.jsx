@@ -774,7 +774,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* SECTION: CONTACT MKB VENTURES GLOBAL LLC (ON HOME PAGE) */}
+          {/* SECTION: CONTACT AMY AZLAAN LLC (ON HOME PAGE) */}
           <section id="contact-section" className="section-wrapper" style={{ padding: '60px 24px 70px' }}>
             <div style={{ maxWidth: '980px', margin: '0 auto' }}>
               <div className="section-header-center">
@@ -814,7 +814,7 @@ export default function App() {
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
                         <MapPin size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Official Registered Address</div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Operating Trade Hub</div>
                           <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.address.line1}</div>
                           <div style={{ color: '#cbd5e1' }}>{siteConfig.address.line2}</div>
                         </div>
@@ -838,7 +838,7 @@ export default function App() {
                   </div>
 
                   <div style={{ marginTop: '28px', paddingTop: '18px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem', color: '#b8aba0' }}>
-                    Managed by <strong>{siteConfig.companyName}</strong> • USA & Global Distribution
+                    Managed by <strong>{siteConfig.companyName}</strong> • Global Distribution Hub
                   </div>
                 </div>
 
