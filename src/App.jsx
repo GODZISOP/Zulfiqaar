@@ -1724,7 +1724,7 @@ export default function App() {
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="section-header-center">
               <span className="section-tag">GET IN TOUCH</span>
-              <h1 className="section-title">Contact MKB Ventures Global LLC</h1>
+              <h1 className="section-title">Contact {siteConfig.companyName}</h1>
               <p style={{ color: '#64748b', maxWidth: '600px', margin: '10px auto 0' }}>
                 We are at your service for catalog requests, partnership discussions, or general inquiries.
               </p>
@@ -1756,9 +1756,9 @@ export default function App() {
                   <div style={{ display: 'flex', gap: '12px' }}>
                     <MapPin size={20} color="#c59b3f" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Official Registered Address</div>
-                      <div style={{ color: '#fff', fontWeight: '600' }}>30 N Gould St # 68445</div>
-                      <div style={{ color: '#fff' }}>{siteConfig.address.line2}</div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Operating Trade Hub</div>
+                      <div style={{ color: '#fff', fontWeight: '600' }}>Global Distribution Trade Desk</div>
+                      <div style={{ color: '#cbd5e1' }}>Middle East & North America Logistics</div>
                     </div>
                   </div>
 
@@ -1767,7 +1767,7 @@ export default function App() {
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Chat</div>
                       <a 
-                        href="https://wa.me/${siteConfig.whatsappNumber}" 
+                        href={`https://wa.me/${siteConfig.whatsappNumber}`} 
                         target="_blank" 
                         rel="noreferrer"
                         style={{ color: '#25d366', fontWeight: '600', textDecoration: 'none' }}
@@ -1781,7 +1781,7 @@ export default function App() {
                     <Building2 size={20} color="#c59b3f" />
                     <div>
                       <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Management</div>
-                      <div style={{ color: '#fff' }}>MKB Ventures Global LLC</div>
+                      <div style={{ color: '#fff' }}>{siteConfig.companyName}</div>
                       <div style={{ color: '#b8aba0', fontSize: '0.85rem' }}>Management & Operations</div>
                     </div>
                   </div>
