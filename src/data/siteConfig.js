@@ -1,10 +1,10 @@
-import defaultLogo from '../images/zulfiqaar-logo.svg';
+import defaultLogo from '../images/amyazlaan-logo.svg';
 
 /**
  * =========================================================================
  * 🌟 GLOBAL SITE CONFIGURATION (CENTRAL CONTROL PANEL)
  * =========================================================================
- * ZULFIQAAR GLOBAL LLC - Central Brand, Contact & Color Settings
+ * AMY AZLAAN LLC - Central Brand, Contact & Color Settings
  */
 
 export const siteConfig = {
