@@ -50,11 +50,11 @@
   <text x="210" y="235" 
         text-anchor="middle" 
         font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" 
-        font-size="28" 
+        font-size="27" 
         font-weight="900" 
         fill="#0f172a" 
-        letter-spacing="3.5">
-    AMYAZLAAN
+        letter-spacing="3">
+    AMY AZLAAN
   </text>
 
   <g transform="translate(210, 264)">
