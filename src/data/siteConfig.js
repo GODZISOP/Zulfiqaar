@@ -27,17 +27,17 @@ export const siteConfig = {
 
   // 📍 Registered & Operating Address
   address: {
-    line1: "30 N Gould St # 68445",
-    line2: "Sheridan, WY 82801",
-    full: "30 N Gould St # 68445 Sheridan, WY 82801",
-    cityStateZip: "Sheridan, WY 82801",
-    jurisdiction: "Wyoming LLC Registered"
+    line1: "Global Distribution Trade Desk",
+    line2: "Middle East & North America Logistics",
+    full: "Global Distribution Trade Hub",
+    cityStateZip: "Global Logistics Trade Desk",
+    jurisdiction: "Commercial LLC Registered"
   },
 
   // 🚚 Warehousing & Shipping Hubs
   hubs: {
-    originText: "Dispatched via US Distribution Hubs & Global Freight Network",
-    dispatchNote: "Dispatched from our primary registered facilities at Sheridan, Wyoming (US domestic & North America) and our Middle East trade hub in KSA."
+    originText: "Dispatched via Global Logistics & Freight Hubs",
+    dispatchNote: "Dispatched from our primary international distribution hubs and regional fulfillment centers."
   },
 
   // 📖 About Page Description & Mission
