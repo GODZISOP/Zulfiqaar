@@ -5,7 +5,7 @@ export const categories = [
     description: 'Precision-engineered cookware, ergonomic kitchen organizers, and contemporary lifestyle essentials.',
     buttonText: 'Shop Home & Living',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   },
   {
@@ -14,7 +14,7 @@ export const categories = [
     description: 'Dermatologist-grade skincare, prestige botanical elixirs, and bespoke grooming rituals.',
     buttonText: 'Shop Personal Care',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   },
   {
@@ -23,7 +23,7 @@ export const categories = [
     description: 'Next-generation audio accessories, high-speed GaN power hubs, and modern electronics.',
     buttonText: 'Shop Electronics',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   },
   {
@@ -32,7 +32,7 @@ export const categories = [
     description: 'Artisanal organic harvest, single-estate tea reserves, and authentic international ingredients.',
     buttonText: 'Shop Gourmet',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
     itemCount: 2
   }
 ];
