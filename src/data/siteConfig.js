@@ -1,31 +1,29 @@
-import defaultLogo from '../images/mkb-logo.svg';
+import defaultLogo from '../images/zulfiqaar-logo.svg';
 
 /**
  * =========================================================================
  * 🌟 GLOBAL SITE CONFIGURATION (CENTRAL CONTROL PANEL)
  * =========================================================================
- * Nayi website banane ke liye sirf is file mein data change karein!
- * Yahan badalne se puri website (Navbar, Footer, Contact, WhatsApp, About)
- * khud-ba-khud 1 second mein update ho jayegi.
+ * ZULFIQAAR GLOBAL LLC - Central Brand, Contact & Color Settings
  */
 
 export const siteConfig = {
   // 🏢 Company Information
-  companyName: "MKB Ventures Global LLC",
-  shortName: "MKB Ventures",
-  legalName: "MKB VENTURES GLOBAL LLC",
-  tagline: "Home & Kitchen, Beauty Care & Pet Supplies",
-  heroSubtitle: "Quality finds, easy shopping, and dependable service from MKB Ventures Global LLC.",
-  eyebrowStandard: "THE MKB VENTURES STANDARD",
+  companyName: "Zulfiqaar Global LLC",
+  shortName: "Zulfiqaar Global",
+  legalName: "ZULFIQAAR GLOBAL LLC",
+  tagline: "Premium Wholesale, General Trading & Global Distribution",
+  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Zulfiqaar Global LLC.",
+  eyebrowStandard: "THE ZULFIQAAR STANDARD OF EXCELLENCE",
 
   // 📞 Phone, WhatsApp & Email
-  phonePrimary: "(+966) 50 741 5829",       // Display phone on top nav
-  phonePrimaryTel: "+966507415829",          // Dial link (tel:...)
-  phoneDirect: "(+966) 59 582 2656",        // Direct trade desk line
-  phoneDirectTel: "+966595822656",          // Direct dial link
-  whatsappNumber: "966595822656",            // Numbers only (country code + number)
-  whatsappDisplay: "(+966) 59 582 2656",
-  email: "info@mkbventuresgloballlc.com",
+  phonePrimary: "(+966) 53 098 7507",       // Display phone on top nav
+  phonePrimaryTel: "+966530987507",          // Dial link (tel:...)
+  phoneDirect: "(+966) 53 098 7507",        // Direct trade desk line
+  phoneDirectTel: "+966530987507",          // Direct dial link
+  whatsappNumber: "966530987507",            // Numbers only (country code + number)
+  whatsappDisplay: "(+966) 53 098 7507",
+  email: "zulfequar.amy@gmail.com",
 
   // 📍 Registered & Operating Address
   address: {
@@ -38,38 +36,33 @@ export const siteConfig = {
 
   // 🚚 Warehousing & Shipping Hubs
   hubs: {
-    originText: "Dispatched via Sheridan, WY & Global Trade Hubs",
+    originText: "Dispatched via US Distribution Hubs & Global Freight Network",
     dispatchNote: "Dispatched from our primary registered facilities at Sheridan, Wyoming (US domestic & North America) and our Middle East trade hub in KSA."
   },
 
   // 📖 About Page Description & Mission
   about: {
-    mission: "Our mission is to bridge the gap between quality manufacturers and consumers worldwide across Automotive Essentials, Baby Care, Personal Care, Grocery, and Home Living.",
-    b2bNote: "Whether you are an independent supermarket, a chain retailer, or an online merchant, our company provides flexible minimums, volume price tiers, and dependable fulfillment."
+    mission: "At Zulfiqaar Global LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
+    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Zulfiqaar Global LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
   },
 
   // ⭐ Testimonial Quote
   testimonial: {
-    quote: "We placed a commercial order for Beauty and Baby Care products. Quality is exceptional, and their communication was 10/10.",
-    author: "Verified Commercial Client"
+    quote: "Partnering with Zulfiqaar Global LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
+    author: "Verified Commercial Trade Partner"
   },
 
   // 💰 Currency Symbol used across the store (e.g. '₨', '$', 'SAR', 'AED')
   currencySymbol: "$",
 
-  // 🖼️ Logo (Change path if you have a new logo in src/images/)
+  // 🖼️ Logo
   logo: defaultLogo,
 
   // 🎨 Website Color Theme (Hex codes)
-  // Har website ke liye yahan se color badlein:
-  // Examples:
-  // Emerald Green: primaryNavy: "#062c26", secondaryTeal: "#0d5c4d", accentTeal: "#059669", accentHover: "#047857"
-  // Royal Blue:    primaryNavy: "#0f172a", secondaryTeal: "#1e3a8a", accentTeal: "#2563eb", accentHover: "#1d4ed8"
-  // Luxury Gold:   primaryNavy: "#18181b", secondaryTeal: "#27272a", accentTeal: "#d97706", accentHover: "#b45309"
   theme: {
-    primaryNavy: "#0c1a2e",
-    secondaryTeal: "#134e5e",
-    accentTeal: "#0d9488",
-    accentHover: "#0f766e"
+    primaryNavy: "#091526",
+    secondaryTeal: "#112a45",
+    accentTeal: "#d97706",
+    accentHover: "#b45309"
   }
 };

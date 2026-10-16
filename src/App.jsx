@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { categories, products } from './data/products';
 import { siteConfig } from './data/siteConfig';
-import logoImg from './images/mkb-logo.svg';
+import logoImg from './images/zulfiqaar-logo.svg';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -25,7 +25,7 @@ export default function App() {
   // Cart & Product Detail state
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('mkb_cart');
+      const saved = localStorage.getItem('zulfiqaar_cart');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -54,7 +54,7 @@ export default function App() {
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('mkb_cart', JSON.stringify(cart));
+      localStorage.setItem('zulfiqaar_cart', JSON.stringify(cart));
     } catch (e) {}
   }, [cart]);
 
@@ -207,7 +207,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links (Clean & Spacious) */}
           <nav className="desktop-nav">
             <ul className="nav-links">
               <li>
@@ -234,29 +234,35 @@ export default function App() {
                   About Us
                 </button>
               </li>
-              <li>
+              <li className="nav-dropdown-wrapper">
                 <button 
-                  className={`nav-link ${activeTab === 'business' ? 'active' : ''}`}
-                  onClick={() => navigateTo('business')}
-                >
-                  Our Services
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`nav-link ${activeTab === 'partnerships' ? 'active' : ''}`}
+                  className={`nav-link ${(activeTab === 'partnerships' || activeTab === 'business' || activeTab === 'supplier') ? 'active' : ''}`}
                   onClick={() => navigateTo('partnerships')}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}
                 >
-                  Wholesale Partnerships
+                  <span>Wholesale & B2B</span>
+                  <ChevronDown size={14} style={{ opacity: 0.7 }} />
                 </button>
-              </li>
-              <li>
-                <button 
-                  className={`nav-link ${activeTab === 'supplier' ? 'active' : ''}`}
-                  onClick={() => navigateTo('supplier')}
-                >
-                  Supplier Inquiries
-                </button>
+                <div className="nav-dropdown-menu">
+                  <button 
+                    className={`nav-dropdown-item ${activeTab === 'partnerships' ? 'active' : ''}`}
+                    onClick={() => navigateTo('partnerships')}
+                  >
+                    Wholesale Partnerships
+                  </button>
+                  <button 
+                    className={`nav-dropdown-item ${activeTab === 'business' ? 'active' : ''}`}
+                    onClick={() => navigateTo('business')}
+                  >
+                    Our Commercial Services
+                  </button>
+                  <button 
+                    className={`nav-dropdown-item ${activeTab === 'supplier' ? 'active' : ''}`}
+                    onClick={() => navigateTo('supplier')}
+                  >
+                    Supplier Inquiries
+                  </button>
+                </div>
               </li>
               <li>
                 <button 
@@ -585,10 +591,7 @@ export default function App() {
                 className="btn-shop-all-pill"
                 onClick={() => {
                   setSelectedCategory('all');
-                  const el = document.getElementById('featured-products-section');
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth' });
-                  }
+                  navigateTo('shop');
                 }}
               >
                 Shop All Products
@@ -818,7 +821,7 @@ export default function App() {
                         <div>
                           <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Direct</div>
                           <a 
-                            href="https://wa.me/${siteConfig.whatsappNumber}" 
+                            href={`https://wa.me/${siteConfig.whatsappNumber}`} 
                             target="_blank" 
                             rel="noreferrer"
                             style={{ color: '#25d366', fontWeight: '700', textDecoration: 'none' }}
@@ -873,6 +876,175 @@ export default function App() {
             </div>
           </section>
         </main>
+      )}
+
+      {/* VIEW: SHOP ALL PRODUCTS CATALOG */}
+      {activeTab === 'shop' && (
+        <div className="section-wrapper" style={{ padding: '40px 24px 80px' }}>
+          {/* Breadcrumb & Header */}
+          <div style={{ marginBottom: '32px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#64748b', marginBottom: '14px' }}>
+              <button 
+                onClick={() => navigateTo('home')} 
+                style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', padding: 0 }}
+              >
+                Home
+              </button>
+              <span>/</span>
+              <span style={{ color: '#091526', fontWeight: '600' }}>Shop All Products</span>
+            </div>
+            
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
+              <div>
+                <h1 className="section-title" style={{ margin: '0 0 8px' }}>
+                  All Products & Wholesale Catalog
+                </h1>
+                <p style={{ color: '#64748b', margin: 0, fontSize: '0.98rem' }}>
+                  Explore verified consumer essentials, direct-from-source wholesale stock, and flexible commercial tiers.
+                </p>
+              </div>
+              <div style={{ background: '#f1f5f9', padding: '6px 14px', borderRadius: '20px', fontSize: '0.88rem', fontWeight: '600', color: '#334155' }}>
+                Showing {filteredProducts.length} of {products.length} Products
+              </div>
+            </div>
+          </div>
+
+          {/* Filtering & Search Toolbar */}
+          <div style={{ 
+            background: '#fff', 
+            padding: '20px', 
+            borderRadius: '16px', 
+            boxShadow: '0 2px 12px rgba(0,0,0,0.04)', 
+            border: '1px solid #e2e8f0',
+            marginBottom: '32px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px'
+          }}>
+            {/* Category Filter Pills */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              <button
+                className={`blue-cat-btn ${selectedCategory === 'all' ? 'active' : ''}`}
+                onClick={() => setSelectedCategory('all')}
+              >
+                All Products ({products.length})
+              </button>
+              {categories.map((cat) => {
+                const count = products.filter(p => p.category === cat.id).length;
+                return (
+                  <button
+                    key={cat.id}
+                    className={`blue-cat-btn ${selectedCategory === cat.id ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory(cat.id)}
+                  >
+                    {cat.name} ({count})
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Search & Sort Row */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px', paddingTop: '12px', borderTop: '1px solid #f1f5f9' }}>
+              <div style={{ position: 'relative', flex: '1', minWidth: '260px', maxWidth: '420px' }}>
+                <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
+                <input
+                  type="text"
+                  placeholder="Search products by title, SKU, or category..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 14px 10px 38px',
+                    borderRadius: '10px',
+                    border: '1px solid #cbd5e1',
+                    fontSize: '0.92rem',
+                    outline: 'none'
+                  }}
+                />
+                {searchQuery && (
+                  <button 
+                    onClick={() => setSearchQuery('')}
+                    style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8' }}
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <label style={{ fontSize: '0.88rem', color: '#64748b', fontWeight: '500' }}>Sort By:</label>
+                <select 
+                  value={sortBy} 
+                  onChange={(e) => setSortBy(e.target.value)}
+                  style={{
+                    padding: '8px 14px',
+                    borderRadius: '8px',
+                    border: '1px solid #cbd5e1',
+                    fontSize: '0.88rem',
+                    background: '#fff',
+                    color: '#1e293b',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <option value="default">Featured / Default</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Top Customer Rated</option>
+                  <option value="latest">Latest Arrivals</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Product Grid */}
+          {filteredProducts.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '60px 20px', background: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+              <Package size={48} color="#94a3b8" style={{ margin: '0 auto 16px' }} />
+              <h3 style={{ fontSize: '1.2rem', color: '#1e293b', marginBottom: '8px' }}>No products match your search</h3>
+              <p style={{ color: '#64748b', marginBottom: '20px' }}>Try searching with different keywords or clear your active category filters.</p>
+              <button 
+                onClick={() => { setSelectedCategory('all'); setSearchQuery(''); }}
+                className="btn-hero-primary"
+                style={{ padding: '10px 24px', fontSize: '0.9rem' }}
+              >
+                Reset All Filters
+              </button>
+            </div>
+          ) : (
+            <div className="featured-grid-four">
+              {filteredProducts.map((prod) => (
+                <div key={prod.id} className="clean-product-card">
+                  <div 
+                    className="clean-product-img-wrap"
+                    onClick={() => viewProductDetail(prod)}
+                  >
+                    <img src={prod.image} alt={prod.name} className="clean-product-img" loading="lazy" />
+                  </div>
+                  <div className="clean-product-body">
+                    <div style={{ fontSize: '0.75rem', fontWeight: '700', color: '#c59b27', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+                      {prod.categoryName}
+                    </div>
+                    <h3 className="clean-product-title" onClick={() => viewProductDetail(prod)}>
+                      {prod.name}
+                    </h3>
+                    <div className="clean-product-price">
+                      {prod.price}
+                    </div>
+                    <button 
+                      className="btn-clean-add-cart"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart(prod, 1, true);
+                      }}
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       )}
 
       {/* VIEW: PRODUCT DETAIL PAGE */}

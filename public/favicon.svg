@@ -1,15 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
     <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#f59e0b" />
       <stop offset="100%" stop-color="#d97706" />
     </linearGradient>
-    <linearGradient id="favBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="favNavy" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1e3a8a" />
-      <stop offset="100%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#091526" />
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="22" fill="url(#favBlue)"/>
-  <path d="M 22 72 L 22 28 L 38 52 L 54 28 L 54 72 L 44 72 L 44 46 L 38 56 L 32 56 L 32 72 Z" fill="#ffffff"/>
-  <path d="M 58 28 L 68 28 L 68 47 L 78 28 L 90 28 L 76 50 L 92 72 L 78 72 L 68 53 L 68 72 L 58 72 Z" fill="url(#favGold)"/>
+  <rect width="100" height="100" rx="24" fill="url(#favNavy)" stroke="url(#favGold)" stroke-width="2"/>
+  <!-- Stylized Z Monogram -->
+  <path d="M 26 30 L 74 30 L 68 42 L 44 42 L 26 30 Z" fill="url(#favGold)"/>
+  <path d="M 70 36 L 32 68 L 42 68 L 76 39 Z" fill="#ffffff"/>
+  <path d="M 26 66 L 56 66 L 74 78 L 26 78 Z" fill="url(#favGold)"/>
+  <!-- Curved dynamic orbital dot -->
+  <circle cx="50" cy="18" r="3.5" fill="url(#favGold)"/>
 </svg>

@@ -115,8 +115,9 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   list-style: none;
+  white-space: nowrap;
 }
 
 .nav-link {
@@ -124,32 +125,84 @@ body {
   background: none;
   border: none;
   font-family: inherit;
-  font-weight: 500;
-  font-size: 0.94rem;
+  font-weight: 600;
+  font-size: 0.92rem;
   transition: all 0.2s ease;
   cursor: pointer;
-  padding: 6px 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
   position: relative;
+  text-decoration: none;
 }
 
 .nav-link:hover {
   color: var(--accent-teal);
+  background: rgba(217, 119, 6, 0.08);
 }
 
 .nav-link.active {
   color: var(--accent-teal);
   font-weight: 700;
+  background: rgba(217, 119, 6, 0.12);
 }
 
-.nav-link.active::after {
-  content: '';
+/* Luxury B2B Nav Dropdown */
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-dropdown-menu {
   position: absolute;
-  bottom: 0;
-  left: 4px;
-  right: 4px;
-  height: 2px;
-  background: var(--accent-teal);
-  border-radius: 2px;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(9, 21, 38, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-menu,
+.nav-dropdown-wrapper:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(2px);
+}
+
+.nav-dropdown-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: #f8fafc;
+  color: var(--accent-teal);
+  padding-left: 18px;
+}
+
+.nav-dropdown-item.active {
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--accent-teal);
+  font-weight: 700;
 }
 
 .nav-actions {
