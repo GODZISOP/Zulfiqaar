@@ -680,7 +680,7 @@ export default function App() {
                     </p>
                   </div>
                   <a 
-                    href="https://wa.me/${siteConfig.whatsappNumber}" 
+                    href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(`Hello ${siteConfig.companyName}, I would like to inquire about wholesale pricing and catalogs.`)}`} 
                     target="_blank" 
                     rel="noreferrer" 
                     className="hf-btn-whatsapp-pill"
