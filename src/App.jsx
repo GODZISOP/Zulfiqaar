@@ -25,7 +25,7 @@ export default function App() {
   // Cart & Product Detail state
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('zulfequar_cart');
+      const saved = localStorage.getItem('amyazlaan_cart');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -37,7 +37,7 @@ export default function App() {
   const [activeDetailTab, setActiveDetailTab] = useState('description');
   const [toastMessage, setToastMessage] = useState(null);
 
-  // Apply theme & document title from siteConfig
+  // Apply theme & document title & browser favicon from siteConfig
   useEffect(() => {
     if (siteConfig.theme) {
       const root = document.documentElement;
@@ -49,12 +49,16 @@ export default function App() {
     if (siteConfig.companyName) {
       document.title = siteConfig.companyName + (siteConfig.tagline ? ' | ' + siteConfig.tagline : '');
     }
+    const faviconLink = document.querySelector("link[rel*='icon']");
+    if (faviconLink && siteConfig.logo) {
+      faviconLink.href = siteConfig.logo;
+    }
   }, []);
 
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('zulfequar_cart', JSON.stringify(cart));
+      localStorage.setItem('amyazlaan_cart', JSON.stringify(cart));
     } catch (e) {}
   }, [cart]);
 
