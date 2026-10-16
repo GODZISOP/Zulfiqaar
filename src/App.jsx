@@ -1261,8 +1261,8 @@ export default function App() {
                     <Phone size={14} /> {siteConfig.phonePrimary}
                   </a>
                   <span className="sep">•</span>
-                  <a href="mailto:info@hassanfaridllc.com" className="help-link">
-                    <Mail size={14} /> info@hassanfaridllc.com
+                  <a href={`mailto:${siteConfig.email}`} className="help-link">
+                    <Mail size={14} /> {siteConfig.email}
                   </a>
                 </div>
 
