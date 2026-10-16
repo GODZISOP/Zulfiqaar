@@ -1646,8 +1646,8 @@ export default function App() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <Mail size={20} color="#38bdf8" />
-                <a href="mailto:info@hassanfaridllc.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
-                  info@hassanfaridllc.com
+                <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
+                  {siteConfig.email}
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
