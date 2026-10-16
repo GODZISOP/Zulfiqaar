@@ -3701,6 +3701,21 @@ body {
   border-color: #ffffff;
 }
 
+/* ==========================================================================
+   GLOBAL RESPONSIVE DESIGN SUITE (MOBILE, TABLET, DESKTOP)
+   ========================================================================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* TABLET BREAKPOINT (max-width: 1024px) */
 @media (max-width: 1024px) {
   .hf-bento-grid {
     grid-template-columns: 1fr;
@@ -3723,21 +3738,285 @@ body {
   .hf-vip-banner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px;
+    padding: 32px 24px;
+    gap: 24px;
   }
 
   .hf-vip-actions {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .hf-vip-btn-gold,
   .hf-vip-btn-outline {
     width: 100%;
+    text-align: center;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .detail-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 28px !important;
+  }
+
+  .corporate-credentials-col,
+  .corp-section-wrapper > div,
+  .contact-grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px !important;
   }
 }
 
+/* MOBILE LANDSCAPE & TABLETS (max-width: 900px) */
 @media (max-width: 900px) {
   .contact-grid-responsive {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* MOBILE PHONES (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Hero section responsiveness */
+  .hero-section {
+    min-height: 440px !important;
+    padding: 36px 0 !important;
+  }
+
+  .hero-container {
+    padding: 24px 16px !important;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+
+  .hero-pretitle {
+    font-size: 0.8rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-description {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 22px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-actions button,
+  .hero-actions .btn-hero-primary,
+  .hero-actions .btn-hero-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Section Headings */
+  .section-title {
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .section-tag {
+    font-size: 0.72rem !important;
+  }
+
+  .section-wrapper {
+    padding: 36px 14px !important;
+  }
+
+  /* Blue bar horizontal scroll */
+  .products-blue-bar {
+    padding: 6px 12px !important;
+    overflow-x: auto !important;
+  }
+
+  .blue-bar-content {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .blue-bar-categories {
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    gap: 4px !important;
+  }
+
+  .blue-cat-btn {
+    padding: 5px 11px !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* Product & Catalog grid on mobile */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .product-card {
+    border-radius: 12px !important;
+  }
+
+  .product-img-wrap {
+    height: 160px !important;
+  }
+
+  .product-info {
+    padding: 12px 10px !important;
+  }
+
+  .product-name,
+  .product-card-title {
+    font-size: 0.92rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .product-price {
+    font-size: 1.05rem !important;
+  }
+
+  .btn-add-cart,
+  .btn-quick-quote {
+    padding: 8px 10px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Filters & search bars */
+  .filter-controls,
+  .catalog-toolbar,
+  .search-filter-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .search-input-wrap,
+  .filter-select {
+    width: 100% !important;
+  }
+
+  /* Categories Grid */
+  .categories-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .category-card {
+    height: 240px !important;
+  }
+
+  /* Corporate & Verification Ledger */
+  .corp-headline {
+    font-size: 1.65rem !important;
+  }
+
+  .corp-lead-text {
+    font-size: 0.92rem !important;
+  }
+
+  .corp-ledger-row {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+    padding: 10px 14px !important;
+  }
+
+  /* Detail Showcase */
+  .detail-showcase-grid {
+    padding: 18px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .detail-actions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .detail-title {
+    font-size: 1.6rem !important;
+  }
+
+  /* Modals & Cart Drawer */
+  .modal-card {
+    padding: 22px 16px !important;
+    border-radius: 16px !important;
+    width: 96% !important;
+  }
+
+  .cart-drawer {
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 40px 16px 24px !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+}
+
+/* SMALL SMARTPHONES (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem !important;
+  }
+
+  .section-title {
+    font-size: 1.6rem !important;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .product-img-wrap {
+    height: 190px !important;
+  }
+
+  .hf-vip-banner {
+    padding: 24px 16px !important;
+  }
+
+  .hf-vip-title {
+    font-size: 1.45rem !important;
   }
 }
