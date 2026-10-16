@@ -10,10 +10,8 @@
       <stop offset="100%" stop-color="#091526" />
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="24" fill="url(#favNavy)" stroke="url(#favGold)" stroke-width="2"/>
-  <!-- Stylized A Monogram -->
-  <path d="M 50 18 L 22 78 L 36 78 L 44 60 L 56 60 L 64 78 L 78 78 Z" fill="url(#favGold)"/>
-  <polygon points="50,34 43,50 57,50" fill="url(#favNavy)"/>
-  <!-- Floating Gold Star at Apex -->
-  <circle cx="50" cy="12" r="3" fill="url(#favGold)"/>
+  <rect width="100" height="100" rx="22" fill="url(#favNavy)" stroke="url(#favGold)" stroke-width="4"/>
+  <path d="M 50 14 L 16 84 L 34 84 L 43 64 L 57 64 L 66 84 L 84 84 Z" fill="url(#favGold)"/>
+  <polygon points="50,30 42,50 58,50" fill="url(#favNavy)"/>
+  <circle cx="50" cy="14" r="4.5" fill="#ffffff"/>
 </svg>
