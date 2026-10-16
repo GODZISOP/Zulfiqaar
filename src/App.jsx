@@ -1833,8 +1833,8 @@ export default function App() {
               Quality products online. Sourcing and distribution dedicated to supplying top tier merchandise with transparent global logistics.
             </p>
             <div style={{ marginTop: '16px', fontSize: '0.85rem', color: '#cbd5e1' }}>
-              <div><strong>Registered Address:</strong> {siteConfig.address.full}</div>
-              <div><strong>Management:</strong> MKB Ventures Global LLC</div>
+              <div><strong>Management:</strong> {siteConfig.companyName}</div>
+              <div><strong>Operations:</strong> Global Distribution & Wholesale Trade Hub</div>
               <div><strong>Trade Desk Hotline:</strong> {siteConfig.phoneDirect} • {siteConfig.email}</div>
             </div>
           </div>
@@ -1927,7 +1927,7 @@ export default function App() {
             © {new Date().getFullYear()} <strong>{siteConfig.legalName}</strong>. All rights reserved.
           </div>
           <div style={{ color: '#64748b' }}>
-            Managed by MKB Ventures Global LLC • {siteConfig.address.full}
+            Managed by {siteConfig.companyName} • Global Logistics & Distribution Hub
           </div>
         </div>
       </footer>
