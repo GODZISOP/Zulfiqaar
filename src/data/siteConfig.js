@@ -23,7 +23,7 @@ export const siteConfig = {
   phoneDirectTel: "+966530987507",          // Direct dial link
   whatsappNumber: "966530987507",            // Numbers only (country code + number)
   whatsappDisplay: "(+966) 53 098 7507",
-  email: "zulfequar.amy@gmail.com",
+  email: "info@amyazlaanllc.com",
 
   // 📍 Registered & Operating Address
   address: {
