@@ -756,7 +756,7 @@ export default function App() {
                 </div>
                 <div className="hf-vip-actions">
                   <a 
-                    href="https://wa.me/${siteConfig.whatsappNumber}" 
+                    href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(`Hello ${siteConfig.companyName}, I would like to inquire about custom orders and wholesale partnerships.`)}`} 
                     target="_blank" 
                     rel="noreferrer"
                     className="hf-vip-btn-gold"
