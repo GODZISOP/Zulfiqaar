@@ -9,12 +9,12 @@ import defaultLogo from '../images/zulfiqaar-logo.svg';
 
 export const siteConfig = {
   // 🏢 Company Information
-  companyName: "Zulfequar Global LLC",
-  shortName: "Zulfequar Global",
-  legalName: "ZULFEQUAR GLOBAL LLC",
+  companyName: "Amyazlaan LLC",
+  shortName: "Amyazlaan",
+  legalName: "AMYAZLAAN LLC",
   tagline: "Premium Wholesale, General Trading & Global Distribution",
-  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Zulfequar Global LLC.",
-  eyebrowStandard: "THE ZULFEQUAR STANDARD OF EXCELLENCE",
+  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Amyazlaan LLC.",
+  eyebrowStandard: "THE AMYAZLAAN STANDARD OF EXCELLENCE",
 
   // 📞 Phone, WhatsApp & Email
   phonePrimary: "(+966) 53 098 7507",       // Display phone on top nav
@@ -42,13 +42,13 @@ export const siteConfig = {
 
   // 📖 About Page Description & Mission
   about: {
-    mission: "At Zulfequar Global LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
-    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Zulfequar Global LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
+    mission: "At Amyazlaan LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
+    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Amyazlaan LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
   },
 
   // ⭐ Testimonial Quote
   testimonial: {
-    quote: "Partnering with Zulfequar Global LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
+    quote: "Partnering with Amyazlaan LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
     author: "Verified Commercial Trade Partner"
   },
 
