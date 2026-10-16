@@ -9,12 +9,12 @@ import defaultLogo from '../images/zulfiqaar-logo.svg';
 
 export const siteConfig = {
   // 🏢 Company Information
-  companyName: "Zulfiqaar Global LLC",
-  shortName: "Zulfiqaar Global",
-  legalName: "ZULFIQAAR GLOBAL LLC",
+  companyName: "Zulfequar Global LLC",
+  shortName: "Zulfequar Global",
+  legalName: "ZULFEQUAR GLOBAL LLC",
   tagline: "Premium Wholesale, General Trading & Global Distribution",
-  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Zulfiqaar Global LLC.",
-  eyebrowStandard: "THE ZULFIQAAR STANDARD OF EXCELLENCE",
+  heroSubtitle: "Direct manufacturer sourcing, dependable bulk supply chains, and exceptional consumer essentials curated by Zulfequar Global LLC.",
+  eyebrowStandard: "THE ZULFEQUAR STANDARD OF EXCELLENCE",
 
   // 📞 Phone, WhatsApp & Email
   phonePrimary: "(+966) 53 098 7507",       // Display phone on top nav
@@ -42,13 +42,13 @@ export const siteConfig = {
 
   // 📖 About Page Description & Mission
   about: {
-    mission: "At Zulfiqaar Global LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
-    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Zulfiqaar Global LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
+    mission: "At Zulfequar Global LLC, our mission is to deliver exceptional wholesale value, connecting premier international manufacturers with retailers, commercial distributors, and online merchants worldwide.",
+    b2bNote: "Whether you operate independent retail stores, supermarket chains, or e-commerce marketplaces, Zulfequar Global LLC provides flexible minimums, volume price tiers, and dependable fulfillment."
   },
 
   // ⭐ Testimonial Quote
   testimonial: {
-    quote: "Partnering with Zulfiqaar Global LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
+    quote: "Partnering with Zulfequar Global LLC transformed our wholesale inventory turnover. Top-tier product authenticity, fast fulfillment, and flawless communication.",
     author: "Verified Commercial Trade Partner"
   },
 
