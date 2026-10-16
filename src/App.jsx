@@ -25,7 +25,7 @@ export default function App() {
   // Cart & Product Detail state
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('zulfiqaar_cart');
+      const saved = localStorage.getItem('zulfequar_cart');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -54,7 +54,7 @@ export default function App() {
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('zulfiqaar_cart', JSON.stringify(cart));
+      localStorage.setItem('zulfequar_cart', JSON.stringify(cart));
     } catch (e) {}
   }, [cart]);
 
