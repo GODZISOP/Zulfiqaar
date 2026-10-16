@@ -1,22 +1,20 @@
-# MKB Ventures Global LLC - Quality Products & E-Commerce Website
+# Amy Azlaan LLC - Wholesale, General Trading & E-Commerce Website
 
-Official digital catalog and wholesale procurement portal for **MKB VENTURES GLOBAL LLC**.
+Official digital catalog and wholesale procurement portal for **AMY AZLAAN LLC**.
 
 ## 🌟 Overview
-* **Brand:** MKB Ventures Global LLC
-* **Slogan:** Quality Products Online
-* **Website:** https://mkbventuresgloballlc.com/
+* **Brand:** Amy Azlaan LLC
+* **Tagline:** Premium Wholesale, General Trading & Global Distribution
 * **Primary Contacts:**
-  * **Email:** info@mkbventuresgloballlc.com
-  * **Phone / WhatsApp:** (+966) 59 582 2656
-  * **Registered Address:** 30 N Gould St # 68445 Sheridan, WY 82801
+  * **Email:** info@amyazlaanllc.com
+  * **Phone / WhatsApp:** (+966) 53 098 7507
+  * **Operations:** Global Distribution & Wholesale Trade Hub (Middle East & North America)
 
 ## 🛍️ Product Catalog & Collections
-1. **Automotive Essentials** (₨ 25)
-2. **Baby Care Favorites** (₨ 19)
-3. **Beauty and Personal Care** (₨ 13)
-4. **Grocery and Gourmet** (₨ 10)
-5. **Home and Everyday Finds** (₨ 32)
+1. **Home & Modern Living** (Cookware Master Sets, Ultrasonic Aroma Diffusers)
+2. **Personal Care & Fragrances** (Oud Royale Grooming Elixirs, Hydra-Restore Skincare)
+3. **Smart Tech & Gadgets** (AuraPro ANC Headphones, HyperCharge 65W GaN Chargers)
+4. **Gourmet & Pantry Staples** (Saffron Gold Royal Reserve Tea, Cold-Pressed Extra Virgin Olive Oil)
 
 ## 💻 Tech Stack
 * React 18
