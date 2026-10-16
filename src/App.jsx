@@ -1432,7 +1432,7 @@ export default function App() {
             <span className="section-tag">COMPANY OVERVIEW</span>
             <h1 className="section-title" style={{ marginBottom: '20px' }}>About {siteConfig.companyName}</h1>
             <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
-              <strong>MKB VENTURES GLOBAL LLC</strong> operates from our registered headquarters at <strong>{siteConfig.address.full}</strong>. Our mission is to bridge the gap between quality manufacturers and consumers worldwide across Automotive Essentials, Baby Care, Personal Care, Grocery, and Home Living.
+              <strong>{siteConfig.legalName}</strong> operates from our registered headquarters at <strong>{siteConfig.address.full}</strong>. {siteConfig.about.mission}
             </p>
             <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.8, marginBottom: '20px' }}>
               We pride ourselves on thoughtful sourcing — choosing products that deliver genuine performance, high customer satisfaction, and dependable quality for retail and wholesale partners worldwide.
