@@ -56,7 +56,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Equip modern kitchens with multi-layer granite non-stick coating, rapid heat-dispersion bases, and ergonomic cool-touch handles.',
-    longDescription: 'Curated by ZULFEQUAR GLOBAL LLC, the Artisan Chef Cookware Set merges commercial durability with refined aesthetics. Crafted with food-grade die-cast aluminum and a stainless induction plate, it ensures effortless culinary performance on gas, electric, and induction stovetops.',
+    longDescription: 'Curated by AMY AZLAAN LLC, the Artisan Chef Cookware Set merges commercial durability with refined aesthetics. Crafted with food-grade die-cast aluminum and a stainless induction plate, it ensures effortless culinary performance on gas, electric, and induction stovetops.',
     features: [
       'Multi-layer non-stick surface, 100% free of PFOA, lead, and cadmium',
       'Heavy-gauge aluminum core for rapid, uniform heat distribution without hot spots',
@@ -95,7 +95,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Transform home ambiance with whisper-quiet ultrasonic atomization, handcrafted matte ceramic housing, and continuous natural fragrance.',
-    longDescription: 'ZULFEQUAR GLOBAL LLC supplies premium wellness and lifestyle home hardware. This sculptural ultrasonic diffuser features a 280ml water reservoir, automatic shutoff safety mechanisms, and soft LED halo lighting suitable for bedrooms, executive offices, and luxury spas.',
+    longDescription: 'AMY AZLAAN LLC supplies premium wellness and lifestyle home hardware. This sculptural ultrasonic diffuser features a 280ml water reservoir, automatic shutoff safety mechanisms, and soft LED halo lighting suitable for bedrooms, executive offices, and luxury spas.',
     features: [
       'Whisper-quiet ultrasonic wave technology operating at under 20dB',
       'Handcrafted artisan matte ceramic cover with sleek modern contours',
@@ -133,7 +133,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Nourish hair and beard fibers with cold-pressed Moroccan argan oil, golden jojoba, and rare Cambodian agarwood oud extract.',
-    longDescription: 'Selected and formulated under strict botanical safety standards by ZULFEQUAR GLOBAL LLC. The Oud Royale Elixir delivers intense hydration without greasy residue, softening coarse textures while releasing an enigmatic, warm fragrance profile of smoky wood and amber.',
+    longDescription: 'Selected and formulated under strict botanical safety standards by AMY AZLAAN LLC. The Oud Royale Elixir delivers intense hydration without greasy residue, softening coarse textures while releasing an enigmatic, warm fragrance profile of smoky wood and amber.',
     features: [
       '100% natural cold-pressed organic carrier oils with authentic oud essence',
       'Non-greasy, fast-absorbing formula that soothes underlying dry skin',
@@ -171,7 +171,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Restore cellular radiance with triple hyaluronic acid serum, peptide barrier defense cream, and gentle amino foaming cleanser.',
-    longDescription: 'Curated by ZULFEQUAR GLOBAL LLC for premier beauty distributors and modern retail chains. Clinically calibrated to fortify the skin barrier, boost natural elasticity, and deliver deep 48-hour cellular hydration for all skin phototypes.',
+    longDescription: 'Curated by AMY AZLAAN LLC for premier beauty distributors and modern retail chains. Clinically calibrated to fortify the skin barrier, boost natural elasticity, and deliver deep 48-hour cellular hydration for all skin phototypes.',
     features: [
       'Triple-weight hyaluronic acid molecules penetrate deep epidermis layers',
       'Copper tri-peptides stimulate natural collagen synthesis and resilience',
@@ -209,7 +209,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Immerse in studio-grade acoustic clarity with hybrid active noise cancellation, custom 40mm beryllium drivers, and 45-hour playback.',
-    longDescription: 'Imported and distributed by ZULFEQUAR GLOBAL LLC. The AuraPro wireless headphone is calibrated for discerning professionals, travelers, and audiophiles. Features quad-microphone ENC for crystal clear conference calls and memory-foam ear cushions wrapped in breathable protein leather.',
+    longDescription: 'Imported and distributed by AMY AZLAAN LLC. The AuraPro wireless headphone is calibrated for discerning professionals, travelers, and audiophiles. Features quad-microphone ENC for crystal clear conference calls and memory-foam ear cushions wrapped in breathable protein leather.',
     features: [
       'Hybrid Active Noise Cancellation filters up to 96% of low-frequency ambient sounds',
       'Custom-tuned 40mm titanium diaphragm drivers produce punchy bass and crystalline highs',
@@ -247,7 +247,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Power laptops, tablets, and smartphones simultaneously with cutting-edge Gallium Nitride (GaN III) semiconductor architecture.',
-    longDescription: 'Engineered for international commerce and modern mobility by ZULFEQUAR GLOBAL LLC. 50% smaller than legacy silicon bricks with intelligent dynamic power allocation and comprehensive over-voltage, temperature, and short-circuit protection.',
+    longDescription: 'Engineered for international commerce and modern mobility by AMY AZLAAN LLC. 50% smaller than legacy silicon bricks with intelligent dynamic power allocation and comprehensive over-voltage, temperature, and short-circuit protection.',
     features: [
       'Next-gen GaN III semiconductor technology delivers cooler, faster charging',
       '65W maximum Power Delivery (PD 3.0 / PPS / QC 4+) charges MacBook Pro to 50% in 30 mins',
@@ -285,7 +285,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'Handpicked mountain highland black tea infused with whole Kashmiri saffron threads, cardamom pods, and organic dried rose petals.',
-    longDescription: 'ZULFEQUAR GLOBAL LLC procures direct from sustainable highland tea estates. Our royal saffron blend undergoes traditional artisanal drying and nitrogen-sealed packaging to preserve maximum essential oils, delivering an amber brew with majestic aroma.',
+    longDescription: 'AMY AZLAAN LLC procures direct from sustainable highland tea estates. Our royal saffron blend undergoes traditional artisanal drying and nitrogen-sealed packaging to preserve maximum essential oils, delivering an amber brew with majestic aroma.',
     features: [
       '100% single-estate whole leaf black tea with authentic Grade A saffron',
       'Airtight embossed collector metal tin with internal double seal for freshness',
@@ -323,7 +323,7 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80',
     link: '#',
     description: 'First cold-pressed single estate extra virgin olive oil with low acidity (<0.2%), grassy fruity notes, and a peppery polyphenol finish.',
-    longDescription: 'Brought directly to commercial dining establishments and premium grocers by ZULFEQUAR GLOBAL LLC. Harvested by hand within 24 hours of pressing, our EVOO retains high levels of oleic acid and natural vitamin E, ideal for dressings, finishing, and healthy cooking.',
+    longDescription: 'Brought directly to commercial dining establishments and premium grocers by AMY AZLAAN LLC. Harvested by hand within 24 hours of pressing, our EVOO retains high levels of oleic acid and natural vitamin E, ideal for dressings, finishing, and healthy cooking.',
     features: [
       'First cold extraction strictly below 24°C preserves delicate antioxidants',
       'Ultra-low acidity (<0.2%) certifying top international premium EVOO tier',
