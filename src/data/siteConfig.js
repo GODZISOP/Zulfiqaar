@@ -24,6 +24,12 @@ export const siteConfig = {
   whatsappNumber: "966530987507",            // Numbers only (country code + number)
   whatsappDisplay: "(+966) 53 098 7507",
   email: "info@amyazlaanllc.com",
+  website: "www.amyazlaanllc.com",
+
+  footer: {
+    websiteUrl: "https://www.amyazlaanllc.com",
+    domain: "amyazlaanllc.com"
+  },
 
   // 📍 Registered & Operating Address
   address: {

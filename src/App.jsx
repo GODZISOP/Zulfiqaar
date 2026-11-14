@@ -4,13 +4,72 @@ import {
   Send, ExternalLink, ShieldCheck, Truck, Award,
   X, MessageSquare, Layers, Building2, ShoppingCart, Menu as MenuIcon,
   Plus, Minus, Trash2, ShoppingBag, Eye, ArrowLeft, Check,
-  LayoutGrid, Sparkles, ChevronDown, Package, Star
+  LayoutGrid, Sparkles, ChevronDown, Package, Star, Globe
 } from 'lucide-react';
 import { categories, products } from './data/products';
-import { siteConfig } from './data/siteConfig';
+import { siteConfig as defaultSiteConfig } from './data/siteConfig';
+import { AdminPanel, useActiveSiteConfig } from './admin';
 import logoImg from './images/amyazlaan-logo.svg';
 
+function isAdminHostname() {
+  if (typeof window === 'undefined') return false;
+  const host = window.location.hostname.toLowerCase();
+  return (
+    host.startsWith('admin.') ||
+    host.includes('-admin.') ||
+    host.includes('admin-') ||
+    import.meta.env.VITE_ADMIN_ONLY === 'true'
+  );
+}
+
+function checkIsAdminRoute() {
+  if (typeof window === 'undefined') return false;
+  const params = new URLSearchParams(window.location.search);
+  const cleanPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+  const cleanHash = window.location.hash.toLowerCase();
+  if (
+    cleanPath.endsWith('/admin') ||
+    cleanHash.startsWith('#admin') ||
+    cleanHash.startsWith('#/admin') ||
+    params.has('admin')
+  ) {
+    return true;
+  }
+  if (isAdminHostname() && !params.has('preview')) {
+    return true;
+  }
+  return false;
+}
+
 export default function App() {
+  const { config: dynamicConfig, refresh: refreshActiveSite } = useActiveSiteConfig();
+  const siteConfig = dynamicConfig || defaultSiteConfig;
+  const [isAdminMode, setIsAdminMode] = useState(checkIsAdminRoute);
+
+  useEffect(() => {
+    const syncRoute = () => setIsAdminMode(checkIsAdminRoute());
+    window.addEventListener('popstate', syncRoute);
+    window.addEventListener('hashchange', syncRoute);
+    return () => {
+      window.removeEventListener('popstate', syncRoute);
+      window.removeEventListener('hashchange', syncRoute);
+    };
+  }, []);
+
+  const exitAdmin = () => {
+    refreshActiveSite();
+    if (window.location.pathname.replace(/\/+$/, '').toLowerCase().endsWith('/admin')) {
+      window.history.pushState({}, '', '/');
+    } else if (window.location.hash.toLowerCase().includes('admin')) {
+      window.location.hash = '';
+    }
+    if (window.location.search.includes('admin')) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('admin');
+      window.history.replaceState({}, '', url.toString());
+    }
+    setIsAdminMode(false);
+  };
   const [activeTab, setActiveTab] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -43,7 +102,10 @@ export default function App() {
       const root = document.documentElement;
       if (siteConfig.theme.primaryNavy) root.style.setProperty('--primary-navy', siteConfig.theme.primaryNavy);
       if (siteConfig.theme.secondaryTeal) root.style.setProperty('--secondary-teal', siteConfig.theme.secondaryTeal);
-      if (siteConfig.theme.accentTeal) root.style.setProperty('--accent-teal', siteConfig.theme.accentTeal);
+      if (siteConfig.theme.accentTeal) {
+        root.style.setProperty('--accent-teal', siteConfig.theme.accentTeal);
+        root.style.setProperty('--accent-gold', siteConfig.theme.accentGold || siteConfig.theme.accentTeal);
+      }
       if (siteConfig.theme.accentHover) root.style.setProperty('--accent-teal-hover', siteConfig.theme.accentHover);
     }
     if (siteConfig.companyName) {
@@ -53,7 +115,7 @@ export default function App() {
     if (faviconLink && siteConfig.logo) {
       faviconLink.href = siteConfig.logo;
     }
-  }, []);
+  }, [siteConfig, isAdminMode]);
 
   // Sync cart to localStorage
   useEffect(() => {
@@ -196,6 +258,10 @@ export default function App() {
       }
     }, 60);
   };
+
+  if (isAdminMode) {
+    return <AdminPanel onExitAdmin={exitAdmin} />;
+  }
 
   return (
     <div className="min-h-screen bg-[#f5f7f9] text-[#1e293b]">
@@ -473,7 +539,7 @@ export default function App() {
             <div className="hero-container">
               <div className="hero-content">
                 <div className="hero-pretitle">{siteConfig.legalName}</div>
-                <h1 className="hero-title">Quality Products Online</h1>
+                <h1 className="hero-title">{siteConfig.heroTitle || 'Quality Products Online'}</h1>
                 <p className="hero-description">
                   {siteConfig.heroSubtitle}
                 </p>
@@ -788,15 +854,46 @@ export default function App() {
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '32px', marginTop: '40px' }} className="contact-grid-responsive">
-                <div style={{ background: '#241b14', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(140, 95, 36, 0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ background: 'var(--primary-navy, #091526)', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', marginBottom: '20px', color: '#f5efe6' }}>Direct Coordinates</h3>
                     
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', fontSize: '0.95rem' }}>
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <Mail size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <Building2 size={20} color="var(--accent-teal, #d97706)" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email</div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Company Name</div>
+                          <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.companyName}</div>
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                        <Phone size={20} color="var(--accent-teal, #d97706)" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</div>
+                          <div><a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>{siteConfig.phoneDirect}</a></div>
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                        <MessageSquare size={20} color="#25d366" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Number</div>
+                          <a 
+                            href={`https://wa.me/${siteConfig.whatsappNumber}`} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            style={{ color: '#25d366', fontWeight: '700', textDecoration: 'none' }}
+                          >
+                            {siteConfig.whatsappDisplay || siteConfig.phoneDirect} (Instant)
+                          </a>
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                        <Mail size={20} color="var(--accent-teal, #d97706)" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email Address</div>
                           <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
                             {siteConfig.email}
                           </a>
@@ -804,33 +901,25 @@ export default function App() {
                       </div>
 
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <Phone size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <MapPin size={20} color="var(--accent-teal, #d97706)" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</div>
-                          <div>Direct: <a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff', textDecoration: 'none' }}>{siteConfig.phoneDirect}</a></div>
-                        </div>
-                      </div>
-
-                      <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <MapPin size={20} color="#c59b3f" style={{ marginTop: '2px', flexShrink: 0 }} />
-                        <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Operating Trade Hub</div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Registered Address</div>
                           <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.address.line1}</div>
                           <div style={{ color: '#cbd5e1' }}>{siteConfig.address.line2}</div>
                         </div>
                       </div>
 
                       <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                        <MessageSquare size={20} color="#25d366" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <Globe size={20} color="var(--accent-teal, #d97706)" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <div>
-                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WhatsApp Direct</div>
+                          <div style={{ color: '#b8aba0', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Official Website</div>
                           <a 
-                            href={`https://wa.me/${siteConfig.whatsappNumber}`} 
+                            href={`https://${(siteConfig.website || 'www.amyazlaanllc.com').replace(/^https?:\/\//, '')}`} 
                             target="_blank" 
                             rel="noreferrer"
-                            style={{ color: '#25d366', fontWeight: '700', textDecoration: 'none' }}
+                            style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}
                           >
-                            {siteConfig.phoneDirect} (Instant)
+                            {siteConfig.website || 'www.amyazlaanllc.com'}
                           </a>
                         </div>
                       </div>
@@ -1731,14 +1820,45 @@ export default function App() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '32px', marginTop: '40px' }}>
-              <div style={{ background: '#241b14', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(140, 95, 36, 0.3)' }}>
+              <div style={{ background: 'var(--primary-navy, #091526)', color: '#fff', padding: '36px', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.12)' }}>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', marginBottom: '16px', color: '#f5efe6' }}>Direct Coordinates</h3>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', fontSize: '0.95rem' }}>
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <Mail size={20} color="#c59b3f" />
+                    <Building2 size={20} color="var(--accent-teal, #d97706)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Email</div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Company Name</div>
+                      <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.companyName}</div>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '12px' }}>
+                    <Phone size={20} color="var(--accent-teal, #d97706)" />
+                    <div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Number</div>
+                      <div><a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.phoneDirect}</a></div>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '12px' }}>
+                    <MessageSquare size={20} color="#25d366" />
+                    <div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Number</div>
+                      <a 
+                        href={`https://wa.me/${siteConfig.whatsappNumber}`} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        style={{ color: '#25d366', fontWeight: '600', textDecoration: 'none' }}
+                      >
+                        {siteConfig.whatsappDisplay || siteConfig.phoneDirect} (Instant)
+                      </a>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '12px' }}>
+                    <Mail size={20} color="var(--accent-teal, #d97706)" />
+                    <div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Email Address</div>
                       <a href={`mailto:${siteConfig.email}`} style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>
                         {siteConfig.email}
                       </a>
@@ -1746,43 +1866,26 @@ export default function App() {
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <Phone size={20} color="#c59b3f" />
+                    <MapPin size={20} color="var(--accent-teal, #d97706)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Phone Number</div>
-                      <div>Direct: <a href={`tel:${siteConfig.phoneDirectTel}`} style={{ color: '#fff' }}>{siteConfig.phoneDirect}</a></div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Registered Address</div>
+                      <div style={{ color: '#fff', fontWeight: '600' }}>{siteConfig.address.line1}</div>
+                      <div style={{ color: '#cbd5e1' }}>{siteConfig.address.line2}</div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <MapPin size={20} color="#c59b3f" />
+                    <Globe size={20} color="var(--accent-teal, #d97706)" />
                     <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Operating Trade Hub</div>
-                      <div style={{ color: '#fff', fontWeight: '600' }}>Global Distribution Trade Desk</div>
-                      <div style={{ color: '#cbd5e1' }}>Middle East & North America Logistics</div>
-                    </div>
-                  </div>
-
-                  <div style={{ display: 'flex', gap: '12px' }}>
-                    <MessageSquare size={20} color="#25d366" />
-                    <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>WhatsApp Chat</div>
+                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Official Website</div>
                       <a 
-                        href={`https://wa.me/${siteConfig.whatsappNumber}`} 
+                        href={`https://${(siteConfig.website || 'www.amyazlaanllc.com').replace(/^https?:\/\//, '')}`} 
                         target="_blank" 
                         rel="noreferrer"
-                        style={{ color: '#25d366', fontWeight: '600', textDecoration: 'none' }}
+                        style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}
                       >
-                        {siteConfig.phoneDirect} (Instant)
+                        {siteConfig.website || 'www.amyazlaanllc.com'}
                       </a>
-                    </div>
-                  </div>
-
-                  <div style={{ display: 'flex', gap: '12px' }}>
-                    <Building2 size={20} color="#c59b3f" />
-                    <div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.8rem', textTransform: 'uppercase' }}>Management</div>
-                      <div style={{ color: '#fff' }}>{siteConfig.companyName}</div>
-                      <div style={{ color: '#b8aba0', fontSize: '0.85rem' }}>Management & Operations</div>
                     </div>
                   </div>
                 </div>
@@ -1852,16 +1955,32 @@ export default function App() {
           <div className="footer-col">
             <h4>Contacts</h4>
             <ul style={{ marginBottom: '20px' }}>
-              <li>
-                <a href={`mailto:${siteConfig.email}`}>
-                  {siteConfig.email}
-                </a>
+              <li style={{ color: '#ffffff', fontWeight: '600' }}>
+                {siteConfig.companyName}
               </li>
               <li>
                 <a href={`tel:${siteConfig.phoneDirectTel}`}>
                   {siteConfig.phoneDirect}
                 </a>
               </li>
+              <li>
+                <a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer" style={{ color: '#4ade80' }}>
+                  WhatsApp: {siteConfig.whatsappDisplay || siteConfig.phoneDirect}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.email}`}>
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li>{siteConfig.address.full}</li>
+              {siteConfig.website && (
+                <li>
+                  <a href={`https://${siteConfig.website.replace(/^https?:\/\//, '')}`} target="_blank" rel="noreferrer">
+                    {siteConfig.website}
+                  </a>
+                </li>
+              )}
             </ul>
 
             <h4 style={{ marginTop: '16px' }}>Socials</h4>
@@ -1869,6 +1988,7 @@ export default function App() {
               <li><a href="https://facebook.com/" target="_blank" rel="noreferrer">Facebook</a></li>
               <li><a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
               <li><a href="https://tiktok.com/" target="_blank" rel="noreferrer">TikTok</a></li>
+              <li><a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer">WhatsApp</a></li>
             </ul>
           </div>
 
